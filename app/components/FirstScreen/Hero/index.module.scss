@@ -1,0 +1,98 @@
+.hero {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+  height: calc(100vh - 150px);
+
+  .image {
+    width: 50%;
+    align-self: flex-end;
+    position: relative;
+    bottom: -100%;
+    opacity: 0;
+    animation: imageAnimation 500ms forwards ease;
+    animation-delay: 100ms;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .text {
+    width: 50%;
+    color: #fff;
+    padding-top: 15%;
+
+    h1 {
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 120%;
+
+      span {
+        color: #ffc700;
+        font-size: 35px;
+        position: relative;
+        right: -200px;
+        opacity: 0;
+        animation: dotAnimation 400ms forwards ease;
+        animation-delay: 400ms;
+      }
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 139.9%;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 0%;
+      animation: typing 3.5s steps(50, end) forwards,
+        blink-caret 0.75s step-end infinite;
+      animation-delay: 1100ms;
+    }
+  }
+}
+
+@keyframes imageAnimation {
+  0% {
+    bottom: -100%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes dotAnimation {
+  0% {
+    right: -200px;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}

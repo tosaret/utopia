@@ -1,0 +1,25 @@
+.firstScreen {
+  position: relative;
+  background: #000;
+  background: linear-gradient(252.81deg, #202020 0%, #000 86%);
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+
+  .blurCircle {
+    position: absolute;
+    left: 69.5%;
+    right: -34.5%;
+    top: 7.67%;
+    bottom: -23.22%;
+    width: 1040px;
+    height: 1040px;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #de8f62 0%,
+      rgba(225, 46, 150, 0) 95.31%
+    );
+    opacity: 0.21;
+    filter: blur(125px);
+  }
+}
