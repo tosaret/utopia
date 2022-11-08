@@ -6,7 +6,7 @@ const Hero = () => {
     <>
       <div className={styles.hero}>
         <div className={styles.image}>
-          <Image src="/hero.png" width={847} height={934} />
+          <Image src="/hero.png" width={847} height={934} alt="" />
         </div>
         <div className={styles.text}>
           <h1>

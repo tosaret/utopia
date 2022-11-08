@@ -1,14 +1,14 @@
 .hero {
   display: flex;
-  justify-content: space-evenly;
-  gap: 30px;
+  align-items: center;
+  gap: 46px;
   height: calc(100vh - 150px);
+  overflow: hidden;
 
   .image {
     width: 50%;
-    align-self: flex-end;
     position: relative;
-    bottom: -100%;
+    bottom: 0;
     opacity: 0;
     animation: imageAnimation 500ms forwards ease;
     animation-delay: 100ms;
@@ -20,20 +20,21 @@
   }
 
   .text {
-    width: 50%;
+    width: 46%;
     color: #fff;
-    padding-top: 15%;
 
     h1 {
       font-weight: 700;
       font-size: 60px;
       line-height: 120%;
+      letter-spacing: 4px;
 
       span {
         color: #ffc700;
-        font-size: 35px;
+        font-size: 25px;
         position: relative;
         right: -200px;
+        top: 2px;
         opacity: 0;
         animation: dotAnimation 400ms forwards ease;
         animation-delay: 400ms;
@@ -43,10 +44,13 @@
     h2 {
       font-weight: 400;
       font-size: 24px;
+      letter-spacing: 4.7px;
       line-height: 139.9%;
       overflow: hidden;
       white-space: nowrap;
       width: 0%;
+      max-width: 400px;
+      border-right: 1px solid transparent;
       animation: typing 3.5s steps(50, end) forwards,
         blink-caret 0.75s step-end infinite;
       animation-delay: 1100ms;
@@ -76,7 +80,6 @@
   }
 }
 
-/* The typing effect */
 @keyframes typing {
   from {
     width: 0;
@@ -86,13 +89,18 @@
   }
 }
 
-/* The typewriter cursor effect */
 @keyframes blink-caret {
   from,
   to {
     border-color: transparent;
   }
   50% {
-    border-color: orange;
+    border-color: #fff;
+  }
+}
+
+@media (max-width: 999px) {
+  .hero {
+    flex-direction: column-reverse;
   }
 }
