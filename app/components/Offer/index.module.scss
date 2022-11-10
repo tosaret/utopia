@@ -13,6 +13,7 @@
     line-height: 40px;
     max-width: 485px;
     padding: 0 0 0 5vw;
+    //filter: blur(3px);
 
     h2 {
       font-weight: 700;
@@ -40,7 +41,7 @@
       height: 120%;
       position: absolute;
       left: 50%;
-      top: -10%;
+      top: -15%;
       background: #eff1f3;
       opacity: 0;
     }
@@ -86,10 +87,77 @@
         color: #fefefe;
         text-transform: uppercase;
 
+        &.active,
         &:hover {
           font-weight: 700;
         }
       }
+    }
+  }
+}
+
+.web {
+  .menuWrapper {
+    background: #ffce21;
+  }
+  h2 {
+    span {
+      color: #ffce21;
+    }
+  }
+}
+
+.mobile {
+  .menuWrapper {
+    background: #36a900;
+  }
+  h2 {
+    span {
+      color: #36a900;
+    }
+  }
+}
+
+.consulting {
+  .menuWrapper {
+    background: #5865f2;
+  }
+  h2 {
+    span {
+      color: #5865f2;
+    }
+  }
+}
+
+.services {
+  .menuWrapper {
+    background: #2663ff;
+  }
+  h2 {
+    span {
+      color: #2663ff;
+    }
+  }
+}
+
+.cloud {
+  .menuWrapper {
+    background: #00a8f0;
+  }
+  h2 {
+    span {
+      color: #00a8f0;
+    }
+  }
+}
+
+.design {
+  .menuWrapper {
+    background: #f2586a;
+  }
+  h2 {
+    span {
+      color: #f2586a;
     }
   }
 }
