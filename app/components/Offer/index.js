@@ -15,17 +15,26 @@ const Offer = ({ active }) => {
           will help your project minimize development and operational costs.
         </p>
       </div>
-      <div
-        className={classNames(styles.menu, {
-          fadeIn: active,
-        })}
-      >
-        <a href="#">Web</a>
-        <a href="#">Mobile</a>
-        <a href="#">Consulting</a>
-        <a href="#">Services</a>
-        <a href="#">Cloud</a>
-        <a href="#">Design</a>
+      <div className={styles.menuBlock}>
+        <div
+          className={classNames(styles.menuShadow, {
+            fadeRight: active,
+          })}
+        />
+        <div
+          className={classNames(styles.menuWrapper, {
+            menuGrow: active,
+          })}
+        >
+          <div className={classNames(styles.menu, { fadeIn: active })}>
+            <a href="#">Web</a>
+            <a href="#">Mobile</a>
+            <a href="#">Consulting</a>
+            <a href="#">Services</a>
+            <a href="#">Cloud</a>
+            <a href="#">Design</a>
+          </div>
+        </div>
       </div>
     </section>
   );

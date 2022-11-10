@@ -12,6 +12,7 @@
     font-size: 18px;
     line-height: 40px;
     max-width: 485px;
+    padding: 0 0 0 5vw;
 
     h2 {
       font-weight: 700;
@@ -26,14 +27,105 @@
     }
   }
 
-  .menu {
+  .menuBlock {
+    max-width: 500px;
+    max-height: 500px;
     text-align: right;
-    opacity: 0;
-    animation-delay: 0s;
-    animation-duration: 500ms;
+    width: 100%;
+    height: 100%;
+    position: relative;
 
-    a {
-      display: block;
+    .menuShadow {
+      width: 120%;
+      height: 120%;
+      position: absolute;
+      left: 50%;
+      top: -10%;
+      background: #eff1f3;
+      opacity: 0;
     }
+  }
+
+  .menuWrapper {
+    max-width: 500px;
+    max-height: 500px;
+    transform: scale(0);
+    background: #2d2d2d;
+    padding: 130px 71px 130px 138px;
+    position: relative;
+    will-change: box-shadow;
+    overflow: hidden;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: -10rem;
+      left: -10rem;
+      width: calc(100% + 20rem);
+      height: calc(100% + 20rem);
+      opacity: 0;
+      pointer-events: none;
+      will-change: opacity;
+      background: url("/noise.png") 10% center;
+      transition: opacity 0.26s ease-out 0s;
+      animation: bg-animation 1s steps(2) 0s infinite normal none running;
+    }
+
+    &:hover:before {
+      opacity: 0.06;
+    }
+
+    .menu {
+      animation-delay: 300ms;
+      opacity: 0;
+
+      a {
+        display: block;
+        font-size: 20px;
+        line-height: 40px;
+        color: #fefefe;
+        text-transform: uppercase;
+
+        &:hover {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  100% {
+    transform: translate(5%, 0);
   }
 }

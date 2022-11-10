@@ -26,17 +26,17 @@
   }
 }
 
-.fadeLeft {
-  animation: fadeLeft 400ms forwards ease;
+.fadeRight {
+  animation: fadeRight 400ms forwards ease;
 }
 
-@keyframes fadeLeft {
-  0% {
-    right: -200px;
+@keyframes fadeRight {
+  from {
+    transform: translateX(50%);
     opacity: 0;
   }
-  100% {
-    right: 0;
+  to {
+    transform: translateX(0%);
     opacity: 1;
   }
 }
@@ -62,5 +62,18 @@
   }
   50% {
     border-color: #fff;
+  }
+}
+
+.menuGrow {
+  animation: menu-grow 300ms forwards linear;
+}
+
+@keyframes menu-grow {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
   }
 }

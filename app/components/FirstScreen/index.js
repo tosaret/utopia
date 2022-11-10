@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Hero from "./Hero";
 import styles from "./index.module.scss";
 import Navigation from "./Navigation";
@@ -9,7 +10,13 @@ const FirstScreen = ({ active }) => {
         <div className="container">
           <Navigation />
           <Hero animate={active} />
-          <div className={styles.blurCircle} />
+          {active && (
+            <div
+              className={classNames(styles.blurCircle, {
+                //fadeIn: active,
+              })}
+            />
+          )}
         </div>
       </section>
     </>

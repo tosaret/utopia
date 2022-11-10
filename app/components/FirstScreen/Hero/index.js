@@ -14,7 +14,7 @@ const Hero = ({ animate }) => {
         <div className={styles.text}>
           <h1>
             utopia
-            <span className="fadeLeft">&#9679;</span>
+            <span className="fadeIn">&#9679;</span>
           </h1>
           <h2 className={classNames({ typing: animate })}>
             design your perfect <strong>world</strong>
