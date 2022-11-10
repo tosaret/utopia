@@ -5,11 +5,7 @@ import styles from "./index.module.scss";
 const Offer = ({ active }) => {
   return (
     <section className={styles.offer}>
-      <div
-        className={classNames(styles.text, {
-          fadeUp: active,
-        })}
-      >
+      <div className={styles.text}>
         <h2>
           What we <span>Offer</span>
         </h2>
