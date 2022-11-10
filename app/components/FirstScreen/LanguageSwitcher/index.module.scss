@@ -25,3 +25,9 @@
     }
   }
 }
+
+@media (max-width: 999px) {
+  .langSwitcher {
+    display: none;
+  }
+}

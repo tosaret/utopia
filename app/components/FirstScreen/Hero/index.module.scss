@@ -60,5 +60,40 @@
 @media (max-width: 999px) {
   .hero {
     flex-direction: column-reverse;
+    padding-top: 90px;
+    height: auto;
+
+    .text {
+      width: 100%;
+      align-self: flex-start;
+
+      h1 {
+        font-size: 48px;
+
+        span {
+          animation: 0s;
+          left: 0;
+          opacity: 1;
+        }
+      }
+
+      h2 {
+        font-size: 16px;
+        animation: 0s;
+        width: 100%;
+        white-space: inherit;
+      }
+    }
+
+    .image {
+      position: absolute;
+      bottom: 0;
+      left: -53vw;
+      width: 100%;
+
+      img {
+        max-width: 150vw;
+      }
+    }
   }
 }

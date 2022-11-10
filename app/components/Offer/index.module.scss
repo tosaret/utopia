@@ -11,11 +11,15 @@
     position: relative;
     bottom: 0;
     opacity: 0;
+    animation-delay: 0s;
+    animation-duration: 1s;
   }
 
   .menu {
     text-align: right;
     opacity: 0;
+    animation-delay: 0s;
+    animation-duration: 1s;
 
     a {
       display: block;

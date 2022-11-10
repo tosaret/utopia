@@ -1,5 +1,7 @@
 import Image from "next/image";
 import classNames from "classnames";
+
+import HeroImageSrc from "../../../../public/hero.png";
 import styles from "./index.module.scss";
 
 const Hero = ({ animate }) => {
@@ -7,13 +9,7 @@ const Hero = ({ animate }) => {
     <>
       <div className={styles.hero}>
         <div className={`fadeUp ${styles.image}`}>
-          <Image
-            src="/hero.png"
-            width={847}
-            height={934}
-            alt=""
-            priority={true}
-          />
+          <Image src={HeroImageSrc} width={700} alt="" priority={true} />
         </div>
         <div className={styles.text}>
           <h1>
