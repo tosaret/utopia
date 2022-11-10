@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import Link from "next/link";
 import { useState } from "react";
 import LanguageSwitcher from "../LanguageSwitcher";
 import styles from "./index.module.scss";
@@ -18,10 +19,10 @@ const Navigation = () => {
           <span></span>
         </label>
         <nav className={classNames({ [styles.show]: menuDropdown })}>
-          <a href="#">Offer</a>
-          <a href="#">Portfolio</a>
-          <a href="#">About Us</a>
-          <a href="#">Contact</a>
+          <Link href="#">Offer</Link>
+          <Link href="#">Portfolio</Link>
+          <Link href="#">About Us</Link>
+          <Link href="#">Contact</Link>
         </nav>
       </header>
       <LanguageSwitcher />

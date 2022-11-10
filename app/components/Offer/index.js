@@ -4,7 +4,7 @@ import styles from "./index.module.scss";
 
 const Offer = ({ active }) => {
   return (
-    <div className={styles.offer}>
+    <section className={styles.offer}>
       <div
         className={classNames(styles.text, {
           fadeUp: active,
@@ -31,7 +31,7 @@ const Offer = ({ active }) => {
         <a href="#">Cloud</a>
         <a href="#">Design</a>
       </div>
-    </div>
+    </section>
   );
 };
 
