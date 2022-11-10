@@ -1,14 +1,15 @@
+import classNames from "classnames";
 import { useEffect } from "react";
 import styles from "./index.module.scss";
 
-const Offer = () => {
-  // useEffect(() => {
-  //   alert("Offer rendered");
-  // }, []);
-
+const Offer = ({ active }) => {
   return (
     <div className={styles.offer}>
-      <div className={styles.text}>
+      <div
+        className={classNames(styles.text, {
+          fadeUp: active,
+        })}
+      >
         <h2>
           What we <span>Offer</span>
         </h2>
@@ -18,7 +19,11 @@ const Offer = () => {
           will help your project minimize development and operational costs.
         </p>
       </div>
-      <div className={styles.menu}>
+      <div
+        className={classNames(styles.menu, {
+          fadeIn: active,
+        })}
+      >
         <a href="#">Web</a>
         <a href="#">Mobile</a>
         <a href="#">Consulting</a>

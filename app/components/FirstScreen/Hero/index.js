@@ -5,16 +5,8 @@ import styles from "./index.module.scss";
 const Hero = ({ animate }) => {
   return (
     <>
-      <div
-        className={classNames(styles.hero, {
-          [styles.paused]: !animate,
-        })}
-      >
-        <div
-          className={classNames(styles.image, {
-            [styles.animate]: animate,
-          })}
-        >
+      <div className={styles.hero}>
+        <div className={`fadeUp ${styles.image}`}>
           <Image
             src="/hero.png"
             width={847}
@@ -26,11 +18,9 @@ const Hero = ({ animate }) => {
         <div className={styles.text}>
           <h1>
             utopia
-            <span className={classNames({ [styles.animate]: animate })}>
-              &#9679;
-            </span>
+            <span className="fadeLeft">&#9679;</span>
           </h1>
-          <h2 className={classNames({ [styles.animate]: animate })}>
+          <h2 className={classNames({ typing: animate })}>
             design your perfect <strong>world</strong>
           </h2>
         </div>

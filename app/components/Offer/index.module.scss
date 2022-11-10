@@ -8,10 +8,14 @@
 
   .text {
     width: 50%;
+    position: relative;
+    bottom: 0;
+    opacity: 0;
   }
 
   .menu {
     text-align: right;
+    opacity: 0;
 
     a {
       display: block;

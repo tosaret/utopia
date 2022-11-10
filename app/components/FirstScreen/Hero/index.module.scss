@@ -11,11 +11,7 @@
     position: relative;
     bottom: 0;
     opacity: 0;
-
-    &.animate {
-      animation: imageAnimation 500ms forwards ease;
-      animation-delay: 100ms;
-    }
+    animation-delay: 100ms;
 
     img {
       max-width: 100%;
@@ -41,11 +37,7 @@
         right: -200px;
         top: 2px;
         opacity: 0;
-
-        &.animate {
-          animation: dotAnimation 400ms forwards ease;
-          animation-delay: 400ms;
-        }
+        animation-delay: 400ms;
       }
     }
 
@@ -60,62 +52,8 @@
       margin: 0;
       max-width: 400px;
       border-right: 1px solid transparent;
-
-      &.animate {
-        animation: typing 3.5s steps(50, end) forwards,
-          blink-caret 0.75s step-end infinite;
-        animation-delay: 1100ms;
-      }
+      animation-delay: 700ms;
     }
-  }
-}
-
-.paused {
-  .text h1 span,
-  .text h2,
-  .image {
-    animation-play-state: paused;
-  }
-}
-
-@keyframes imageAnimation {
-  0% {
-    bottom: -100%;
-    opacity: 0;
-  }
-  100% {
-    bottom: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes dotAnimation {
-  0% {
-    right: -200px;
-    opacity: 0;
-  }
-  100% {
-    right: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #fff;
   }
 }
 
