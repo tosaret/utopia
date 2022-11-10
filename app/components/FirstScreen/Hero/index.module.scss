@@ -6,12 +6,16 @@
   overflow: hidden;
 
   .image {
+    align-self: flex-end;
     width: 50%;
     position: relative;
     bottom: 0;
     opacity: 0;
-    animation: imageAnimation 500ms forwards ease;
-    animation-delay: 100ms;
+
+    &.animate {
+      animation: imageAnimation 500ms forwards ease;
+      animation-delay: 100ms;
+    }
 
     img {
       max-width: 100%;
@@ -27,7 +31,8 @@
       font-weight: 700;
       font-size: 60px;
       line-height: 120%;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
+      margin: 0;
 
       span {
         color: #ffc700;
@@ -36,25 +41,40 @@
         right: -200px;
         top: 2px;
         opacity: 0;
-        animation: dotAnimation 400ms forwards ease;
-        animation-delay: 400ms;
+
+        &.animate {
+          animation: dotAnimation 400ms forwards ease;
+          animation-delay: 400ms;
+        }
       }
     }
 
     h2 {
       font-weight: 400;
       font-size: 24px;
-      letter-spacing: 4.7px;
+      letter-spacing: 4.3px;
       line-height: 139.9%;
       overflow: hidden;
       white-space: nowrap;
       width: 0%;
+      margin: 0;
       max-width: 400px;
       border-right: 1px solid transparent;
-      animation: typing 3.5s steps(50, end) forwards,
-        blink-caret 0.75s step-end infinite;
-      animation-delay: 1100ms;
+
+      &.animate {
+        animation: typing 3.5s steps(50, end) forwards,
+          blink-caret 0.75s step-end infinite;
+        animation-delay: 1100ms;
+      }
     }
+  }
+}
+
+.paused {
+  .text h1 span,
+  .text h2,
+  .image {
+    animation-play-state: paused;
   }
 }
 

@@ -1,3 +1,4 @@
+import LanguageSwitcher from "../LanguageSwitcher";
 import styles from "./index.module.scss";
 
 const Navigation = () => {
@@ -11,9 +12,7 @@ const Navigation = () => {
           <a href="#">Contact</a>
         </nav>
       </header>
-      <div className={styles.langSwitcher}>
-        <a href="#">PL</a>
-      </div>
+      <LanguageSwitcher />
     </>
   );
 };
