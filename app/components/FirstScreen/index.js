@@ -13,7 +13,7 @@ const FirstScreen = ({ active }) => {
           {active && (
             <div
               className={classNames(styles.blurCircle, {
-                //fadeIn: active,
+                fadeInWithOpacity: active,
               })}
             />
           )}

@@ -11,6 +11,19 @@
   }
 }
 
+.fadeInWithOpacity {
+  animation: fadeInWithOpacity 500ms forwards ease;
+}
+
+@keyframes fadeInWithOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.21;
+  }
+}
+
 .fadeUp {
   animation: fadeUp 500ms forwards ease;
 }
