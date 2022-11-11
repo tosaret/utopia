@@ -5,9 +5,26 @@
 @keyframes fadeIn {
   0% {
     opacity: 0;
+    filter: blur(3px);
   }
   100% {
     opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 500ms forwards ease;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(3px);
   }
 }
 
@@ -88,5 +105,20 @@
   }
   to {
     transform: scale(1);
+  }
+}
+
+.rollOut {
+  animation: rollOut 400ms forwards linear;
+}
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200%) rotate(180deg) scale(0.1);
   }
 }

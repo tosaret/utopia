@@ -13,7 +13,7 @@
     line-height: 40px;
     max-width: 485px;
     padding: 0 0 0 5vw;
-    //filter: blur(3px);
+    opacity: 0;
 
     h2 {
       font-weight: 700;
@@ -23,7 +23,8 @@
 
       span {
         display: block;
-        font-size: 82px;
+        font-size: 72px;
+        transition: color 200ms ease-in;
       }
     }
   }
@@ -56,6 +57,7 @@
     position: relative;
     will-change: box-shadow;
     overflow: hidden;
+    transition: background-color 300ms ease;
 
     &:before {
       position: absolute;

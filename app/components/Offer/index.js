@@ -7,29 +7,51 @@ import styles from "./index.module.scss";
 
 const Offer = ({ active }) => {
   const [activeTab, setActiveTab] = useState(0);
+  const [activeClassName, setActiveClassName] = useState("");
+  const [title, setTitle] = useState(ReactHtmlParser(texts[activeTab].title));
 
   const changeOffer = (index) => {
     setActiveTab(index);
   };
 
   useEffect(() => {
+    const menuEl = document.getElementById("offer-menu");
+    const textEl = document.getElementById("offer-text");
+
+    textEl.classList.add("fadeOut");
+    menuEl.classList.add("rollOut");
+    setTimeout(() => {
+      setTitle(ReactHtmlParser(texts[activeTab].title));
+      textEl.classList.remove("fadeOut");
+      menuEl.classList.remove("rollOut");
+
+      activeTab === 1 && setActiveClassName(styles.web);
+      activeTab === 2 && setActiveClassName(styles.mobile);
+      activeTab === 3 && setActiveClassName(styles.consulting);
+      activeTab === 4 && setActiveClassName(styles.services);
+      activeTab === 5 && setActiveClassName(styles.cloud);
+      activeTab === 6 && setActiveClassName(styles.design);
+    }, 250);
+
+    return () => {
+      setActiveClassName("");
+    };
+  }, [activeTab]);
+
+  useEffect(() => {
     !active && setActiveTab(0);
   }, [active]);
 
   return (
-    <section
-      className={classNames(styles.offer, {
-        [styles.web]: activeTab === 1,
-        [styles.mobile]: activeTab === 2,
-        [styles.consulting]: activeTab === 3,
-        [styles.services]: activeTab === 4,
-        [styles.cloud]: activeTab === 5,
-        [styles.design]: activeTab === 6,
-      })}
-    >
-      <div className={styles.text}>
-        <h2>{ReactHtmlParser(texts[activeTab].title)}</h2>
-        <p>{texts[activeTab].text}</p>
+    <section className={classNames(styles.offer, activeClassName)}>
+      <div
+        id="offer-text"
+        className={classNames(styles.text, {
+          fadeIn: active,
+        })}
+      >
+        <h2>{title}</h2>
+        <p>{ReactHtmlParser(texts[activeTab].text)}</p>
       </div>
 
       <div className={styles.menuBlock}>
@@ -39,6 +61,7 @@ const Offer = ({ active }) => {
           })}
         />
         <div
+          id="offer-menu"
           className={classNames(styles.menuWrapper, {
             menuGrow: active,
           })}
