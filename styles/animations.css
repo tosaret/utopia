@@ -41,17 +41,17 @@
   }
 }
 
-.fadeUp {
-  animation: fadeUp 500ms forwards ease;
+.fadeUpMobilePhone {
+  animation: fadeUpMobilePhone 500ms forwards ease-in-out;
 }
 
-@keyframes fadeUp {
+@keyframes fadeUpMobilePhone {
   0% {
-    bottom: -100%;
+    top: 800px;
     opacity: 0;
   }
   100% {
-    bottom: 0;
+    top: 80px;
     opacity: 1;
   }
 }
