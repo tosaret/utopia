@@ -5,25 +5,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   .text {
-    width: 50%;
+    width: 55%;
     font-weight: 500;
     font-size: 18px;
     line-height: 40px;
-    max-width: 485px;
-    padding: 0 0 0 5vw;
+    max-width: 540px;
+    padding: 0 0 0 3.5vw;
     opacity: 0;
+    letter-spacing: 1px;
 
     h2 {
       font-weight: 700;
       font-size: 52px;
-      line-height: 70px;
-      margin: 0 0 15px;
+      line-height: 65px;
+      margin: 15px 0 25px;
+      letter-spacing: 3px;
 
       span {
         display: block;
-        font-size: 72px;
+        margin: 12px 0 0;
+        font-size: 82px;
         transition: color 200ms ease-in;
       }
     }
@@ -41,19 +45,21 @@
       width: 120%;
       height: 120%;
       position: absolute;
-      left: 50%;
-      top: -15%;
+      left: 48%;
+      top: -9%;
       background: #eff1f3;
       opacity: 0;
     }
   }
 
   .menuWrapper {
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 473px;
+    width: 100%;
+    max-height: 473px;
     transform: scale(0);
     background: #2d2d2d;
-    padding: 130px 71px 130px 138px;
+    padding: 123px 84px 130px 138px;
+    margin: 60px 0 0 82px;
     position: relative;
     will-change: box-shadow;
     overflow: hidden;
@@ -88,6 +94,7 @@
         line-height: 40px;
         color: #fefefe;
         text-transform: uppercase;
+        letter-spacing: 1px;
 
         &.active,
         &:hover {
@@ -95,6 +102,77 @@
         }
       }
     }
+  }
+
+  .offerCircle {
+    position: absolute;
+    width: 689px;
+    height: 689px;
+    left: -55vw;
+    top: calc(50% - 689px / 2);
+    border-radius: 100%;
+
+    background: #f9f9f9;
+    box-shadow: rgba(0, 0, 0, 0.3) -27px 0px 70px -18px;
+    transition: all 0.2s ease 0s;
+    transform: rotate(0deg);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+
+    &.circleIn {
+      animation: spin 2s linear infinite, circleMoveIn 600ms forwards linear;
+    }
+
+    &.circleOut {
+      animation: spin 2s linear infinite, circleMoveOut 600ms forwards linear;
+    }
+
+    &:hover {
+      animation: spin 2s linear infinite, morph 1.8s linear infinite,
+        circleMoveIn 600ms forwards linear;
+    }
+  }
+}
+
+@keyframes circleMoveIn {
+  from {
+    left: -55vw;
+  }
+  to {
+    left: -52vw;
+  }
+}
+
+@keyframes circleMoveOut {
+  from {
+    left: -52vw;
+  }
+  to {
+    left: -55vw;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes morph {
+  0%,
+  to {
+    border-radius: 40% 60% 70% 30%/40% 40% 60% 50%;
+  }
+
+  34% {
+    border-radius: 70% 30% 50% 50%/30% 30% 70% 70%;
+  }
+
+  67% {
+    border-radius: 100% 60% 60% 100%/100% 100% 60% 60%;
   }
 }
 
@@ -107,6 +185,9 @@
       color: #ffce21;
     }
   }
+  .offerCircle {
+    box-shadow: rgba(255, 207, 38, 0.6) -27px 0px 70px -18px;
+  }
 }
 
 .mobile {
@@ -117,6 +198,9 @@
     span {
       color: #36a900;
     }
+  }
+  .offerCircle {
+    box-shadow: rgba(54, 169, 0, 0.6) -27px 0px 70px -18px;
   }
 }
 
@@ -129,6 +213,9 @@
       color: #5865f2;
     }
   }
+  .offerCircle {
+    box-shadow: rgba(88, 101, 242, 0.6) -27px 0px 70px -18px;
+  }
 }
 
 .services {
@@ -139,6 +226,9 @@
     span {
       color: #2663ff;
     }
+  }
+  .offerCircle {
+    box-shadow: rgba(38, 99, 255, 0.6) -27px 0px 70px -18px;
   }
 }
 
@@ -151,6 +241,9 @@
       color: #00a8f0;
     }
   }
+  .offerCircle {
+    box-shadow: rgba(0, 168, 240, 0.6) -27px 0px 70px -18px;
+  }
 }
 
 .design {
@@ -161,6 +254,9 @@
     span {
       color: #f2586a;
     }
+  }
+  .offerCircle {
+    box-shadow: rgba(242, 88, 106, 0.6) -27px 0px 70px -18px;
   }
 }
 

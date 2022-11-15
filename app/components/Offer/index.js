@@ -17,13 +17,16 @@ const Offer = ({ active }) => {
   useEffect(() => {
     const menuEl = document.getElementById("offer-menu");
     const textEl = document.getElementById("offer-text");
+    const circleEl = document.getElementById("offer-circle");
 
     textEl.classList.add("fadeOut");
     menuEl.classList.add("rollOut");
+    circleEl.classList.add([styles.circleOut]);
     setTimeout(() => {
       setTitle(ReactHtmlParser(texts[activeTab].title));
       textEl.classList.remove("fadeOut");
       menuEl.classList.remove("rollOut");
+      circleEl.classList.remove([styles.circleOut]);
 
       activeTab === 1 && setActiveClassName(styles.web);
       activeTab === 2 && setActiveClassName(styles.mobile);
@@ -31,7 +34,7 @@ const Offer = ({ active }) => {
       activeTab === 4 && setActiveClassName(styles.services);
       activeTab === 5 && setActiveClassName(styles.cloud);
       activeTab === 6 && setActiveClassName(styles.design);
-    }, 250);
+    }, 700);
 
     return () => {
       setActiveClassName("");
@@ -44,6 +47,13 @@ const Offer = ({ active }) => {
 
   return (
     <section className={classNames(styles.offer, activeClassName)}>
+      <div
+        id="offer-circle"
+        className={classNames(styles.offerCircle, {
+          [styles.circleIn]: active,
+        })}
+      />
+
       <div
         id="offer-text"
         className={classNames(styles.text, {
