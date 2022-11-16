@@ -18,23 +18,28 @@ const Offer = ({ active }) => {
     const menuEl = document.getElementById("offer-menu");
     const textEl = document.getElementById("offer-text");
     const circleEl = document.getElementById("offer-circle");
+    const shadowEl = document.getElementById("offer-circle");
 
     textEl.classList.add("fadeOut");
     menuEl.classList.add("rollOut");
     circleEl.classList.add([styles.circleOut]);
+    shadowEl.classList.remove([styles.webShadow]);
 
     setTimeout(() => {
       setTitle(ReactHtmlParser(texts[activeTab].title));
       textEl.classList.remove("fadeOut");
       menuEl.classList.remove("rollOut");
       circleEl.classList.remove([styles.circleOut]);
+      shadowEl.classList.add([styles.webShadow]);
 
-      activeTab === 1 && setActiveClassName(styles.web);
-      activeTab === 2 && setActiveClassName(styles.mobile);
-      activeTab === 3 && setActiveClassName(styles.consulting);
-      activeTab === 4 && setActiveClassName(styles.services);
-      activeTab === 5 && setActiveClassName(styles.cloud);
-      activeTab === 6 && setActiveClassName(styles.design);
+      setActiveClassName(
+        (activeTab === 1 && styles.web) ||
+          (activeTab === 2 && styles.mobile) ||
+          (activeTab === 3 && styles.consulting) ||
+          (activeTab === 4 && styles.services) ||
+          (activeTab === 5 && styles.cloud) ||
+          (activeTab === 6 && styles.design)
+      );
     }, 700);
 
     return () => {
