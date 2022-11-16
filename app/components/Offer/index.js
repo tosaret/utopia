@@ -22,6 +22,7 @@ const Offer = ({ active }) => {
     textEl.classList.add("fadeOut");
     menuEl.classList.add("rollOut");
     circleEl.classList.add([styles.circleOut]);
+
     setTimeout(() => {
       setTitle(ReactHtmlParser(texts[activeTab].title));
       textEl.classList.remove("fadeOut");
@@ -66,8 +67,15 @@ const Offer = ({ active }) => {
 
       <div className={styles.menuBlock}>
         <div
+          id="offer-shadow"
           className={classNames(styles.menuShadow, {
-            fadeRight: active,
+            fadeRight: activeTab === 0 && active,
+            [styles.webShadow]: activeTab === 1,
+            [styles.mobileShadow]: activeTab === 2,
+            [styles.consultingShadow]: activeTab === 3,
+            [styles.servicesShadow]: activeTab === 4,
+            [styles.cloudShadow]: activeTab === 5,
+            [styles.designShadow]: activeTab === 6,
           })}
         />
         <div
