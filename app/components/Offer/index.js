@@ -25,6 +25,8 @@ const Offer = ({ active }) => {
     circleEl.classList.add([styles.circleOut]);
     shadowEl.classList.remove([styles.webShadow]);
 
+    // try add/remove classNames with prev activeTab
+
     setTimeout(() => {
       setTitle(ReactHtmlParser(texts[activeTab].title));
       textEl.classList.remove("fadeOut");
