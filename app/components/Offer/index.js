@@ -7,41 +7,41 @@ import styles from "./index.module.scss";
 
 const Offer = ({ active }) => {
   const [activeTab, setActiveTab] = useState(0);
+  const [prevTab, setPrevTab] = useState(0);
   const [activeClassName, setActiveClassName] = useState("");
   const [title, setTitle] = useState(ReactHtmlParser(texts[activeTab].title));
 
   const changeOffer = (index) => {
-    setActiveTab(index);
+    setActiveTab((prev) => {
+      setPrevTab(prev);
+      return index;
+    });
   };
 
   useEffect(() => {
     const menuEl = document.getElementById("offer-menu");
     const textEl = document.getElementById("offer-text");
     const circleEl = document.getElementById("offer-circle");
-    const shadowEl = document.getElementById("offer-circle");
 
     textEl.classList.add("fadeOut");
-    menuEl.classList.add("rollOut");
-    circleEl.classList.add([styles.circleOut]);
-    shadowEl.classList.remove([styles.webShadow]);
+    prevTab === 0 && menuEl.classList.add("rollOut");
+    prevTab === 0 && circleEl.classList.add([styles.circleOut]);
 
     // try add/remove classNames with prev activeTab
+
+    setActiveClassName(
+      (activeTab === 1 && styles.web) ||
+        (activeTab === 2 && styles.mobile) ||
+        (activeTab === 3 && styles.consulting) ||
+        (activeTab === 4 && styles.services) ||
+        (activeTab === 5 && styles.cloud) ||
+        (activeTab === 6 && styles.design)
+    );
 
     setTimeout(() => {
       setTitle(ReactHtmlParser(texts[activeTab].title));
       textEl.classList.remove("fadeOut");
       menuEl.classList.remove("rollOut");
-      circleEl.classList.remove([styles.circleOut]);
-      shadowEl.classList.add([styles.webShadow]);
-
-      setActiveClassName(
-        (activeTab === 1 && styles.web) ||
-          (activeTab === 2 && styles.mobile) ||
-          (activeTab === 3 && styles.consulting) ||
-          (activeTab === 4 && styles.services) ||
-          (activeTab === 5 && styles.cloud) ||
-          (activeTab === 6 && styles.design)
-      );
     }, 700);
 
     return () => {
@@ -74,7 +74,6 @@ const Offer = ({ active }) => {
 
       <div className={styles.menuBlock}>
         <div
-          id="offer-shadow"
           className={classNames(styles.menuShadow, {
             fadeRight: activeTab === 0 && active,
             [styles.webShadow]: activeTab === 1,

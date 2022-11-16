@@ -109,7 +109,7 @@
     position: absolute;
     width: 689px;
     height: 689px;
-    left: -55vw;
+    left: -54vw;
     top: calc(50% - 689px / 2);
     border-radius: 100%;
 
@@ -137,19 +137,19 @@
 
 @keyframes circleMoveIn {
   from {
-    left: -55vw;
+    left: -54vw;
   }
   to {
-    left: -52vw;
+    left: -51vw;
   }
 }
 
 @keyframes circleMoveOut {
   from {
-    left: -52vw;
+    left: -51vw;
   }
   to {
-    left: -55vw;
+    left: -54vw;
   }
 }
 
