@@ -50,7 +50,7 @@ const Offer = ({ active }) => {
       <div
         id="offer-circle"
         className={classNames(styles.offerCircle, {
-          [styles.circleIn]: active,
+          [styles.circleIn]: activeTab === 0 && active,
         })}
       />
 
