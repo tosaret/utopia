@@ -22,6 +22,7 @@ const Offer = ({ active }) => {
     const menuEl = document.getElementById("offer-menu");
     const textEl = document.getElementById("offer-text");
     const circleEl = document.getElementById("offer-circle");
+    //const shadowEl = document.getElementById("offer-shadow");
 
     textEl.classList.add("fadeOut");
     prevTab === 0 && menuEl.classList.add("rollOut");
@@ -38,11 +39,13 @@ const Offer = ({ active }) => {
         (activeTab === 6 && styles.design)
     );
 
+    //prevTab === 1 && shadowEl.classList.add([styles.webShadowOut]);
+
     setTimeout(() => {
       setTitle(ReactHtmlParser(texts[activeTab].title));
       textEl.classList.remove("fadeOut");
       menuEl.classList.remove("rollOut");
-    }, 700);
+    }, 300);
 
     return () => {
       setActiveClassName("");
@@ -74,6 +77,7 @@ const Offer = ({ active }) => {
 
       <div className={styles.menuBlock}>
         <div
+          id="offer-shadow"
           className={classNames(styles.menuShadow, {
             fadeRight: activeTab === 0 && active,
             [styles.webShadow]: activeTab === 1,
