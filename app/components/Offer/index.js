@@ -23,14 +23,11 @@ const Offer = ({ active }) => {
     const menuEl = document.getElementById("offer-menu");
     const textEl = document.getElementById("offer-text");
     const circleEl = document.getElementById("offer-circle");
-    //const shadowEl = document.getElementById("offer-shadow");
 
     textEl.classList.add("fadeOut");
     prevTab === 0 && menuEl.classList.add("rollOut");
     prevTab === 0 && circleEl.classList.add([styles.circleOut]);
     prevTab === 0 && active && setOpening(true);
-
-    // try add/remove classNames with prev activeTab
 
     setActiveClassName(
       (activeTab === 1 && styles.web) ||
@@ -41,22 +38,12 @@ const Offer = ({ active }) => {
         (activeTab === 6 && styles.design)
     );
 
-    //prevTab === 1 && shadowEl.classList.add([styles.webShadowOut]);
-
     setTimeout(() => {
       setTitle(ReactHtmlParser(texts[activeTab].title));
       textEl.classList.remove("fadeOut");
       menuEl.classList.remove("rollOut");
     }, 300);
-
-    return () => {
-      setActiveClassName("");
-    };
   }, [activeTab]);
-
-  useEffect(() => {
-    !active && setActiveTab(0);
-  }, [active]);
 
   return (
     <section className={classNames(styles.offer, activeClassName)}>
