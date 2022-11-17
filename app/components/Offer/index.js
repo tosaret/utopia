@@ -8,6 +8,7 @@ import styles from "./index.module.scss";
 const Offer = ({ active }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [prevTab, setPrevTab] = useState(0);
+  const [opening, setOpening] = useState(false);
   const [activeClassName, setActiveClassName] = useState("");
   const [title, setTitle] = useState(ReactHtmlParser(texts[activeTab].title));
 
@@ -27,6 +28,7 @@ const Offer = ({ active }) => {
     textEl.classList.add("fadeOut");
     prevTab === 0 && menuEl.classList.add("rollOut");
     prevTab === 0 && circleEl.classList.add([styles.circleOut]);
+    prevTab === 0 && active && setOpening(true);
 
     // try add/remove classNames with prev activeTab
 
@@ -88,6 +90,11 @@ const Offer = ({ active }) => {
             [styles.designShadow]: activeTab === 6,
           })}
         />
+        <div
+          className={classNames(styles.openingShadow, {
+            [styles.animate]: prevTab === 0 && opening,
+          })}
+        ></div>
         <div
           id="offer-menu"
           className={classNames(styles.menuWrapper, {

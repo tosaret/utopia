@@ -16,6 +16,7 @@
     padding: 0 0 0 3.5vw;
     opacity: 0;
     letter-spacing: 1px;
+    animation-duration: 1000ms;
 
     h2 {
       font-weight: 700;
@@ -178,6 +179,7 @@
 }
 
 .web {
+  .openingShadow,
   .menuWrapper {
     background: #ffce21;
   }
@@ -192,6 +194,7 @@
 }
 
 .mobile {
+  .openingShadow,
   .menuWrapper {
     background: #36a900;
   }
@@ -206,6 +209,7 @@
 }
 
 .consulting {
+  .openingShadow,
   .menuWrapper {
     background: #5865f2;
   }
@@ -220,6 +224,7 @@
 }
 
 .services {
+  .openingShadow,
   .menuWrapper {
     background: #2663ff;
   }
@@ -234,6 +239,7 @@
 }
 
 .cloud {
+  .openingShadow,
   .menuWrapper {
     background: #00a8f0;
   }
@@ -248,6 +254,7 @@
 }
 
 .design {
+  .openingShadow,
   .menuWrapper {
     background: #f2586a;
   }
@@ -303,12 +310,12 @@
   background: rgba(255, 207, 38, 0.24);
   opacity: 0;
   animation: 700ms webShadow forwards ease-in-out;
-  animation-delay: 1s;
+  animation-delay: 500ms;
 }
 
 @keyframes webShadow {
   0% {
-    transform: translateX(-50vw);
+    transform: translateX(10%);
     width: 0;
     opacity: 1;
   }
@@ -327,7 +334,7 @@
   background: rgba(199, 229, 185, 1);
   opacity: 1;
   animation: 1100ms mobileShadow forwards ease-in-out;
-  animation-delay: 100ms;
+  animation-delay: 500ms;
 }
 
 @keyframes mobileShadow {
@@ -351,7 +358,7 @@
   background: rgba(88, 101, 242, 0.26);
   opacity: 1;
   animation: 900ms consultingShadow forwards ease-in-out;
-  animation-delay: 300ms;
+  animation-delay: 500ms;
 }
 
 @keyframes consultingShadow {
@@ -371,7 +378,7 @@
   background: #c6d5fa;
   opacity: 1;
   animation: 700ms servicesShadow forwards ease-in-out;
-  animation-delay: 600ms;
+  animation-delay: 500ms;
 }
 
 @keyframes servicesShadow {
@@ -393,7 +400,7 @@
   background: #d1effb;
   opacity: 1;
   animation: 1100ms cloudShadow forwards ease-in-out;
-  animation-delay: 400ms;
+  animation-delay: 500ms;
 }
 
 @keyframes cloudShadow {
@@ -413,7 +420,7 @@
   background: #f8d0d5;
   opacity: 1;
   animation: 800ms designShadow forwards ease-in-out;
-  animation-delay: 1100ms;
+  animation-delay: 500ms;
 
   &:before {
     content: "";
@@ -424,7 +431,7 @@
     left: 0;
     bottom: 102%;
     animation: 2s designShadowTwo forwards linear;
-    animation-delay: 2s;
+    animation-delay: 1500ms;
   }
 }
 
@@ -443,6 +450,48 @@
   }
   100% {
     bottom: 400%;
+  }
+}
+
+.openingShadow {
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  right: -70%;
+  top: -9%;
+  background: #eff1f3;
+  opacity: 0;
+
+  &.animate {
+    animation: openingShadow 1500ms forwards linear;
+  }
+}
+
+@keyframes openingShadow {
+  0% {
+    opacity: 0;
+    width: 5vw;
+    filter: grayscale(1);
+  }
+  25% {
+    width: 70vw;
+    right: 5vw;
+    opacity: 0.5;
+  }
+  50% {
+    width: 5vw;
+    right: 70vw;
+    opacity: 0.5;
+  }
+  75% {
+    width: 70vw;
+    right: -70%;
+    opacity: 0.25;
+    filter: grayscale(0);
+  }
+  100% {
+    width: 120%;
+    opacity: 0;
   }
 }
 
