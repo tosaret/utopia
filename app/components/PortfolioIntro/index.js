@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 
 const PortfolioIntro = () => {
   return (
-    <div className={styles.portfolioIntro}>
+    <section className={styles.portfolioIntro}>
       <div>
         <h2>Our Portfolio</h2>
         <p>
@@ -11,7 +11,7 @@ const PortfolioIntro = () => {
           products we are proud to be a part of.
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

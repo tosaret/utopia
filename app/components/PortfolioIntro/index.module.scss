@@ -4,6 +4,9 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
+  position: relative;
+  z-index: 2;
+  background: #fff;
 
   p {
     max-width: 770px;
