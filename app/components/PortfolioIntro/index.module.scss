@@ -1,0 +1,11 @@
+.portfolioIntro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+
+  p {
+    max-width: 770px;
+  }
+}
