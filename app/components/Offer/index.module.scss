@@ -502,11 +502,11 @@
   .offer .menuBlock .menuShadow {
     animation: none;
     opacity: 1;
-    width: 400px;
-    height: 330px;
+    width: 90%;
+    height: 70%;
     top: 0;
-    left: initial;
-    right: -40%;
+    right: initial;
+    left: 0;
     transition: background-color 1s linear;
 
     &:before {
