@@ -4,6 +4,7 @@ import Image from "next/image";
 import FirstScreen from "../app/components/FirstScreen";
 import Offer from "../app/components/Offer";
 import ReactPageScroller, { SectionContainer } from "react-page-scroller";
+import PortfolioIntro from "../app/components/PortfolioIntro";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -23,6 +24,7 @@ export default function Home() {
       <ReactPageScroller animationTimer={600} pageOnChange={handlePageChange}>
         <FirstScreen active={currentPage === 0} />
         <Offer active={currentPage === 1} />
+        <PortfolioIntro />
         {/* <SectionContainer height={50}>
           <FirstScreen active={currentPage === 0} />
         </SectionContainer> */}
