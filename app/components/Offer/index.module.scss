@@ -65,7 +65,7 @@
     position: relative;
     will-change: box-shadow;
     overflow: hidden;
-    transition: background-color 300ms ease;
+    transition: background-color 700ms ease;
 
     &:before {
       position: absolute;
@@ -108,10 +108,11 @@
 
   .offerCircle {
     position: absolute;
-    width: 689px;
-    height: 689px;
-    left: -54vw;
-    top: calc(50% - 689px / 2);
+    width: 661px;
+    height: 661px;
+    left: calc(-100vw / 2);
+    top: calc(50% - 661px / 2);
+    transform: translateX(0);
     border-radius: 100%;
 
     background: #f9f9f9;
@@ -130,27 +131,26 @@
     }
 
     &:hover {
-      animation: spin 2s linear infinite, morph 8s linear infinite,
-        circleMoveIn 600ms forwards linear;
+      animation: spin 2s linear infinite, morph 1s linear infinite;
     }
   }
 }
 
 @keyframes circleMoveIn {
   from {
-    left: -54vw;
+    transform: translateX(0);
   }
   to {
-    left: -51vw;
+    transform: translateX(20px);
   }
 }
 
 @keyframes circleMoveOut {
   from {
-    left: -51vw;
+    transform: translateX(20px);
   }
   to {
-    left: -54vw;
+    transform: translateX(0);
   }
 }
 
@@ -315,13 +315,13 @@
 
 @keyframes webShadow {
   0% {
-    transform: translateX(10%);
+    transform: translateX(-50vw);
     width: 0;
     opacity: 1;
   }
   100% {
-    transform: translateX(30%);
-    width: 120%;
+    transform: translateX(0);
+    width: 120vw;
     opacity: 1;
   }
 }
@@ -344,7 +344,7 @@
     transform: translateX(-100px);
   }
   100% {
-    width: 120%;
+    width: 120vw;
     height: 120%;
     transform: translateX(0);
   }
@@ -366,7 +366,7 @@
     width: 0;
   }
   100% {
-    width: 100%;
+    width: 100vw;
   }
 }
 
@@ -387,13 +387,13 @@
     top: 80%;
   }
   100% {
-    height: 100%;
+    height: 200%;
     top: 50%;
   }
 }
 
 .offer .menuBlock .cloudShadow {
-  width: 120%;
+  width: 120vw;
   height: 120%;
   left: 48%;
   top: -200%;
@@ -413,7 +413,7 @@
 }
 
 .offer .menuBlock .designShadow {
-  width: 150%;
+  width: 150vw;
   height: 0;
   left: 20%;
   top: 60%;
@@ -504,7 +504,7 @@
 @media (max-width: 999px) {
   .offer {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 30px;
     height: 100vh;
 
@@ -552,10 +552,10 @@
     animation: none;
     opacity: 1;
     width: 90%;
-    height: 70%;
+    height: 100vh;
     top: 0;
     right: initial;
-    left: 0;
+    left: 40%;
     transition: background-color 1s linear;
 
     &:before {

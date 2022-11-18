@@ -8,7 +8,17 @@
   z-index: 2;
   background: #fff;
 
+  h2 {
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 110px;
+  }
+
   p {
     max-width: 770px;
+    font-size: 18px;
+    line-height: 39px;
+    text-align: center;
+    letter-spacing: 0.07em;
   }
 }
