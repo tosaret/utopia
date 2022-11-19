@@ -42,7 +42,7 @@ const Offer = ({ active }) => {
       setTitle(ReactHtmlParser(texts[activeTab].title));
       textEl.classList.remove("fadeOut");
       menuEl.classList.remove("rollOut");
-    }, 300);
+    }, 500);
   }, [activeTab]);
 
   return (

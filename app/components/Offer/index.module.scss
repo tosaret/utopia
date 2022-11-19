@@ -1,7 +1,5 @@
 .offer {
-  max-width: 1190px;
   height: 100vh;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,11 +10,11 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 40px;
-    max-width: 540px;
-    padding: 0 0 0 3.5vw;
+    max-width: 50%;
+    padding: 0 0 0 15vw;
     opacity: 0;
     letter-spacing: 1px;
-    animation-duration: 1000ms;
+    animation-duration: 500ms;
 
     h2 {
       font-weight: 700;
@@ -29,24 +27,25 @@
         display: block;
         margin: 12px 0 0;
         font-size: 82px;
-        transition: color 200ms ease-in;
+        transition: all 600ms ease-in;
       }
     }
   }
 
   .menuBlock {
-    max-width: 500px;
     max-height: 500px;
     text-align: right;
-    width: 100%;
+    width: 45%;
     height: 100%;
     position: relative;
+    align-self: center;
+    justify-self: center;
 
     .menuShadow {
       width: 120%;
       height: 120%;
       position: absolute;
-      left: 48%;
+      left: 350px;
       top: -9%;
       background: #eff1f3;
       opacity: 0;
@@ -110,10 +109,8 @@
     position: absolute;
     width: 661px;
     height: 661px;
-    left: calc(-100vw / 2);
+    left: -560px;
     top: calc(50% - 661px / 2);
-    transform: translateX(0);
-    border-radius: 100%;
 
     background: #f9f9f9;
     box-shadow: rgba(0, 0, 0, 0.3) -20px 0px 70px 10px;
@@ -141,13 +138,13 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(20px);
+    transform: translateX(60px);
   }
 }
 
 @keyframes circleMoveOut {
   from {
-    transform: translateX(20px);
+    transform: translateX(60px);
   }
   to {
     transform: translateX(0);
@@ -305,7 +302,7 @@
 }
 
 .offer .menuBlock .webShadow {
-  left: 48%;
+  left: 350px;
   top: -15%;
   background: rgba(255, 207, 38, 0.24);
   opacity: 0;
@@ -329,7 +326,7 @@
 .offer .menuBlock .mobileShadow {
   width: 0;
   height: 0;
-  left: 48%;
+  left: 350px;
   top: -15%;
   background: rgba(199, 229, 185, 1);
   opacity: 1;
@@ -353,7 +350,7 @@
 .offer .menuBlock .consultingShadow {
   width: 0;
   height: 120%;
-  left: 30%;
+  left: 220px;
   top: -45%;
   background: rgba(88, 101, 242, 0.26);
   opacity: 1;
@@ -395,7 +392,7 @@
 .offer .menuBlock .cloudShadow {
   width: 120vw;
   height: 120%;
-  left: 48%;
+  left: 350px;
   top: -200%;
   background: #d1effb;
   opacity: 1;
@@ -415,7 +412,7 @@
 .offer .menuBlock .designShadow {
   width: 150vw;
   height: 0;
-  left: 20%;
+  left: 180px;
   top: 60%;
   background: #f8d0d5;
   opacity: 1;
