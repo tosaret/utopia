@@ -113,7 +113,7 @@
     top: calc(50% - 661px / 2);
 
     background: #f9f9f9;
-    box-shadow: rgba(0, 0, 0, 0.3) -20px 0px 70px 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 20px -20px 70px 10px;
     transition: all 0.2s ease 0s;
     transform: rotate(0deg);
     border-radius: 50%;
@@ -135,19 +135,19 @@
 
 @keyframes circleMoveIn {
   from {
-    transform: translateX(0);
+    left: -560px;
   }
   to {
-    transform: translateX(60px);
+    left: -500px;
   }
 }
 
 @keyframes circleMoveOut {
   from {
-    transform: translateX(60px);
+    left: -500px;
   }
   to {
-    transform: translateX(0);
+    left: -560px;
   }
 }
 
@@ -186,7 +186,7 @@
     }
   }
   .offerCircle {
-    box-shadow: rgba(255, 207, 38, 0.6) -20px 0px 70px 10px;
+    box-shadow: rgba(255, 207, 38, 0.6) 20px -20px 70px 10px;
   }
 }
 
@@ -201,7 +201,7 @@
     }
   }
   .offerCircle {
-    box-shadow: rgba(54, 169, 0, 0.6) -20px 0px 70px 10px;
+    box-shadow: rgba(54, 169, 0, 0.6) 20px -20px 70px 10px;
   }
 }
 
@@ -216,7 +216,7 @@
     }
   }
   .offerCircle {
-    box-shadow: rgba(88, 101, 242, 0.6) -20px 0px 70px 10px;
+    box-shadow: rgba(88, 101, 242, 0.6) 20px -20px 70px 10px;
   }
 }
 
@@ -231,7 +231,7 @@
     }
   }
   .offerCircle {
-    box-shadow: rgba(38, 99, 255, 0.6) -20px 0px 70px 10px;
+    box-shadow: rgba(38, 99, 255, 0.6) 20px -20px 70px 10px;
   }
 }
 
@@ -246,7 +246,7 @@
     }
   }
   .offerCircle {
-    box-shadow: rgba(0, 168, 240, 0.6) -20px 0px 70px 10px;
+    box-shadow: rgba(0, 168, 240, 0.6) 20px -20px 70px 10px;
   }
 }
 
@@ -261,7 +261,7 @@
     }
   }
   .offerCircle {
-    box-shadow: rgba(242, 88, 106, 0.6) -20px 0px 70px 10px;
+    box-shadow: rgba(242, 88, 106, 0.6) 20px -20px 70px 10px;
   }
 }
 
