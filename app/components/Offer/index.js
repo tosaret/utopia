@@ -1,6 +1,5 @@
 import ReactHtmlParser from "react-html-parser";
 import classNames from "classnames";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import texts from "./content.json";
 import styles from "./index.module.scss";
@@ -12,7 +11,8 @@ const Offer = ({ active }) => {
   const [activeClassName, setActiveClassName] = useState("");
   const [title, setTitle] = useState(ReactHtmlParser(texts[activeTab].title));
 
-  const changeOffer = (index) => {
+  const changeOffer = (event, index) => {
+    event.preventDefault();
     setActiveTab((prev) => {
       setPrevTab(prev);
       return index;
@@ -89,48 +89,48 @@ const Offer = ({ active }) => {
           })}
         >
           <div className={classNames(styles.menu, { fadeIn: active })}>
-            <Link
+            <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 1 })}
-              onClick={() => changeOffer(1)}
+              onClick={() => changeOffer(event, 1)}
             >
               Web
-            </Link>
-            <Link
+            </a>
+            <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 2 })}
-              onClick={() => changeOffer(2)}
+              onClick={() => changeOffer(event, 2)}
             >
               Mobile
-            </Link>
-            <Link
+            </a>
+            <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 3 })}
-              onClick={() => changeOffer(3)}
+              onClick={() => changeOffer(event, 3)}
             >
               Consulting
-            </Link>
-            <Link
+            </a>
+            <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 4 })}
-              onClick={() => changeOffer(4)}
+              onClick={() => changeOffer(event, 4)}
             >
               Services
-            </Link>
-            <Link
+            </a>
+            <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 5 })}
-              onClick={() => changeOffer(5)}
+              onClick={() => changeOffer(event, 5)}
             >
               Cloud
-            </Link>
-            <Link
+            </a>
+            <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 6 })}
-              onClick={() => changeOffer(6)}
+              onClick={() => changeOffer(event, 6)}
             >
               Design
-            </Link>
+            </a>
           </div>
         </div>
       </div>

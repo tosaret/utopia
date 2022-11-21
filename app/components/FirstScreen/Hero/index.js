@@ -5,7 +5,7 @@ import classNames from "classnames";
 import HeroImageSrc from "../../../../public/hero-mobile.png";
 import styles from "./index.module.scss";
 
-const Hero = ({ animate }) => {
+const Hero = ({ animate, changePage }) => {
   return (
     <>
       <div className={styles.hero}>
@@ -27,7 +27,7 @@ const Hero = ({ animate }) => {
             design your perfect <strong>world</strong>
           </h2>
           <div className={styles.readMore}>
-            <Link href="#">
+            <Link href="" onClick={() => changePage(1)}>
               read <span>more</span>
             </Link>
           </div>

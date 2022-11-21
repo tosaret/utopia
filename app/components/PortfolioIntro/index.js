@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import PlayIcon from "../../../public/play-icon.svg";
 import styles from "./index.module.scss";
 
@@ -13,9 +14,9 @@ const PortfolioIntro = () => {
           application. <br /> Here are some of the <strong>World Class</strong>{" "}
           products we are proud to be a part of.
         </p>
-        <a href="#" className={styles.playIcon}>
+        <Link href="" className={styles.playIcon}>
           <Image src={PlayIcon} width={24} height={24} alt="" />
-        </a>
+        </Link>
       </div>
     </section>
   );

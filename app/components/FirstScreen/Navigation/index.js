@@ -4,7 +4,7 @@ import { useState } from "react";
 import LanguageSwitcher from "../LanguageSwitcher";
 import styles from "./index.module.scss";
 
-const Navigation = () => {
+const Navigation = ({ changePage }) => {
   const [menuDropdown, setMenuDropdown] = useState(false);
 
   return (
@@ -19,10 +19,18 @@ const Navigation = () => {
           <span></span>
         </label>
         <nav className={classNames({ [styles.show]: menuDropdown })}>
-          <Link href="#">Offer</Link>
-          <Link href="#">Portfolio</Link>
-          <Link href="#">About Us</Link>
-          <Link href="#">Contact</Link>
+          <Link href="" onClick={() => changePage(1)}>
+            Offer
+          </Link>
+          <Link href="" onClick={() => changePage(2)}>
+            Portfolio
+          </Link>
+          <Link href="" onClick={() => changePage(2)}>
+            About Us
+          </Link>
+          <Link href="" onClick={() => changePage(2)}>
+            Contact
+          </Link>
         </nav>
       </header>
       <LanguageSwitcher />

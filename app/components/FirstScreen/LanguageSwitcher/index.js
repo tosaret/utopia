@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import styles from "./index.module.scss";
 
@@ -11,9 +12,9 @@ const LanguageSwitcher = () => {
       </a>
       {showLangDropdown && (
         <div className={styles.dropdown}>
-          <a href="#">PL</a>
-          <a href="#">EN</a>
-          <a href="#">DE</a>
+          <Link href="">PL</Link>
+          <Link href="">EN</Link>
+          <Link href="">DE</Link>
         </div>
       )}
     </div>
