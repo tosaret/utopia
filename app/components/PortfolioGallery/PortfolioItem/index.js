@@ -21,8 +21,9 @@ const PortfolioItem = ({ item }) => {
               {title}
             </div>
             <div>
-              {tags.map((tag) => (
+              {tags.map((tag, index) => (
                 <span
+                  key={index}
                   style={{ backgroundColor: tagsColor }}
                   className={styles.label}
                 >

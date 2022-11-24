@@ -16,5 +16,23 @@
     "imageUrl": "/portfolio-img1.png",
     "backgroundGradient": "linear-gradient(90deg, #17D2BB 21.84%, #4AE4CE 96.13%)",
     "tagsColor": "rgba(20, 187, 176, 0.76)"
+  },
+  "3": {
+    "logoUrl": "/portfolio-logo1.png",
+    "title": "Another",
+    "tags": ["Android", "iOS"],
+    "description": "Some very long and irrelevant motivational description that nobody will give a shit about but must be provided in order to keep the layout interesting.",
+    "imageUrl": "/portfolio-img1.png",
+    "backgroundGradient": "linear-gradient(90deg, #FF8370 21.84%, #FF9D73 64.38%)",
+    "tagsColor": "rgba(255, 114, 97, 0.71)"
+  },
+  "4": {
+    "logoUrl": "/portfolio-logo1.png",
+    "title": "And One More",
+    "tags": ["Web", "Mobile"],
+    "description": "Integration with the cloud which will help your project minimize development and operational costs. Integration with the cloud which will help your project minimize development and operational costs.",
+    "imageUrl": "/portfolio-img1.png",
+    "backgroundGradient": "linear-gradient(90deg, #d34c68 21.84%, #d92b2b 96.13%)",
+    "tagsColor": "rgba(217, 43, 43, 0.76)"
   }
 }

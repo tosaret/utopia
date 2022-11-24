@@ -12,7 +12,6 @@
     position: relative;
     z-index: 2;
     display: flex;
-    gap: 30px;
 
     .titleContainer,
     .descriptionContainer {
@@ -40,7 +39,7 @@
 }
 
 .info {
-  width: 51%;
+  width: 50%;
   padding-left: 5%;
 }
 
@@ -81,6 +80,7 @@
 
 .image {
   display: flex;
+  width: 50%;
 
   img {
     width: 100%;
