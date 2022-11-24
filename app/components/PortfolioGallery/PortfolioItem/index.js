@@ -12,8 +12,6 @@ const PortfolioItem = ({ item, animateOut, animateIn, newBgColor }) => {
     imageUrl,
   } = item;
 
-  console.log(newBgColor);
-
   return (
     <div
       className={classNames(styles.portfolioGallery, {
