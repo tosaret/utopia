@@ -8,6 +8,9 @@ import styles from "./index.module.scss";
 
 const PortfolioGallery = () => {
   const [currentItem, setCurrentItem] = useState(1);
+  const [newBgColor, setNewBgColor] = useState("");
+  const [animateIn, setAnimateIn] = useState(false);
+  const [animateOut, setAnimateOut] = useState(false);
 
   var portfolioItems = [];
   for (var i in items) portfolioItems.push([i, items[i]]);
@@ -15,7 +18,22 @@ const PortfolioGallery = () => {
   const item = items[currentItem];
 
   const handlePagination = (index) => {
-    setCurrentItem(parseInt(index));
+    const nextItem = items[index];
+
+    setNewBgColor(nextItem.backgroundGradient);
+    setAnimateIn(false);
+    setAnimateOut(true);
+
+    setTimeout(() => {
+      setAnimateOut(false);
+      setAnimateIn(true);
+      setCurrentItem(parseInt(index));
+
+      setTimeout(() => {
+        setAnimateOut(false);
+        setAnimateIn(false);
+      }, 900);
+    }, 900);
   };
 
   useEffect(() => {
@@ -24,7 +42,12 @@ const PortfolioGallery = () => {
 
   return (
     <div className={styles.portfolio}>
-      <PortfolioItem item={item} />
+      <PortfolioItem
+        item={item}
+        animateIn={animateIn}
+        animateOut={animateOut}
+        newBgColor={newBgColor}
+      />
       <div className={styles.pagination}>
         {portfolioItems.map((item, index) => (
           <button

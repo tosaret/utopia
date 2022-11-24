@@ -23,8 +23,8 @@
     "tags": ["Android", "iOS"],
     "description": "Some very long and irrelevant motivational description that nobody will give a shit about but must be provided in order to keep the layout interesting.",
     "imageUrl": "/portfolio-img1.png",
-    "backgroundGradient": "linear-gradient(90deg, #FF8370 21.84%, #FF9D73 64.38%)",
-    "tagsColor": "rgba(255, 114, 97, 0.71)"
+    "backgroundGradient": "linear-gradient(90deg, #5145CA 21.84%, #112F6D 96.13%)",
+    "tagsColor": "rgba(81, 69, 202, 0.71)"
   },
   "4": {
     "logoUrl": "/portfolio-logo1.png",

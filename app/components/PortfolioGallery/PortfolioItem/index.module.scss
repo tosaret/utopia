@@ -4,6 +4,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  user-select: none;
 
   .portfolioContainer {
     width: 100%;
@@ -27,6 +28,15 @@
     }
   }
 
+  .portfolioBottomWrapper {
+    color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+  }
+
   .portfolioBottomBg {
     background: linear-gradient(90deg, #ff8370 21.84%, #ff9d73 64.38%);
     color: #fff;
@@ -44,6 +54,7 @@
 }
 
 .title {
+  position: relative;
   color: #282828;
   font-weight: 500;
   font-size: 46px;
@@ -58,6 +69,7 @@
 }
 
 .label {
+  position: relative;
   display: inline-block;
   padding: 0 32px;
   margin: 0 9px 0 0;
@@ -76,16 +88,96 @@
   font-size: 18px;
   line-height: 46px;
   max-width: 470px;
+  position: relative;
+  left: 0;
 }
 
 .image {
   display: flex;
   width: 50%;
+  position: relative;
 
   img {
     width: 100%;
     height: auto;
     align-self: center;
     justify-self: flex-end;
+  }
+}
+
+.animateOut {
+  .image {
+    animation: fadeUpOut 400ms forwards linear;
+  }
+  .title,
+  .label {
+    animation: fadeUpOut 1200ms forwards linear;
+  }
+  .description {
+    animation: fadeOutLeft 900ms forwards linear;
+  }
+  .portfolioBottomBg {
+    animation: scrollLeft 900ms forwards linear;
+  }
+}
+
+.animateIn {
+  .image {
+    animation: fadeIn 500ms forwards linear;
+  }
+  .title,
+  .label,
+  .description {
+    animation: fadeIn 400ms forwards linear;
+  }
+}
+
+@keyframes fadeOutLeft {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    left: -1000px;
+    opacity: 0;
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -1000px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUpOut {
+  0% {
+    top: 0;
+    transform: scale(1);
+  }
+  100% {
+    top: -100vh;
+    opacity: 0;
+    transform: scale(0.6);
   }
 }

@@ -1,6 +1,7 @@
+import classNames from "classnames";
 import styles from "./index.module.scss";
 
-const PortfolioItem = ({ item }) => {
+const PortfolioItem = ({ item, animateOut, animateIn, newBgColor }) => {
   const {
     title,
     description,
@@ -11,8 +12,15 @@ const PortfolioItem = ({ item }) => {
     imageUrl,
   } = item;
 
+  console.log(newBgColor);
+
   return (
-    <div className={styles.portfolioGallery}>
+    <div
+      className={classNames(styles.portfolioGallery, {
+        [styles.animateOut]: animateOut,
+        [styles.animateIn]: animateIn,
+      })}
+    >
       <div className={styles.portfolioContainer}>
         <div className={styles.info}>
           <div className={styles.titleContainer}>
@@ -41,9 +49,14 @@ const PortfolioItem = ({ item }) => {
         </div>
       </div>
       <div
-        style={{ background: backgroundGradient }}
-        className={styles.portfolioBottomBg}
-      ></div>
+        style={{ background: newBgColor }}
+        className={styles.portfolioBottomWrapper}
+      >
+        <div
+          style={{ background: backgroundGradient }}
+          className={styles.portfolioBottomBg}
+        ></div>
+      </div>
     </div>
   );
 };
