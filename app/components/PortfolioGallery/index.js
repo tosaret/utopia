@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useSwipeable } from "react-swipeable";
 import classNames from "classnames";
 import PortfolioItem from "./PortfolioItem";
 
@@ -19,8 +20,8 @@ const PortfolioGallery = () => {
 
   const handlePagination = (index) => {
     const nextItem = items[index];
-
     setNewBgColor(nextItem.backgroundGradient);
+
     setAnimateIn(false);
     setAnimateOut(true);
 
@@ -36,12 +37,33 @@ const PortfolioGallery = () => {
     }, 900);
   };
 
+  const handleSwipeLeft = (currentItem) => {
+    if (currentItem === portfolioItems.length) {
+      handlePagination(1);
+    }
+    handlePagination(currentItem + 1);
+  };
+
+  const handleSwipeRight = (currentItem) => {
+    if (currentItem === 1) {
+      console.log(portfolioItems.length);
+      handlePagination(portfolioItems.length);
+    }
+    handlePagination(currentItem - 1);
+  };
+
   useEffect(() => {
     setCurrentItem(1);
   }, []);
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => handleSwipeLeft(currentItem),
+    onSwipedRight: () => handleSwipeRight(currentItem),
+    trackMouse: true,
+  });
+
   return (
-    <div className={styles.portfolio}>
+    <div {...handlers} className={styles.portfolio}>
       <PortfolioItem
         item={item}
         animateIn={animateIn}
