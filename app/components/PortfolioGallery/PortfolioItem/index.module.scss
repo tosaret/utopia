@@ -35,6 +35,7 @@
     bottom: 0;
     width: 100%;
     height: 50vh;
+    overflow: hidden;
   }
 
   .portfolioBottomBg {
@@ -45,6 +46,7 @@
     bottom: 0;
     width: 100%;
     height: 50vh;
+    overflow: hidden;
   }
 }
 
@@ -114,21 +116,34 @@
     animation: fadeUpOut 1200ms forwards linear;
   }
   .description {
-    animation: fadeOutLeft 900ms forwards linear;
+    animation: fadeOutLeft 1200ms forwards linear;
   }
   .portfolioBottomBg {
-    animation: scrollLeft 900ms forwards linear;
+    animation: scrollLeft 900ms forwards linear,
+      wobble 1000ms ease-in-out alternate infinite;
   }
 }
 
 .animateIn {
   .image {
-    animation: fadeIn 500ms forwards linear;
+    animation: fadeIn 700ms forwards linear;
   }
   .title,
   .label,
   .description {
-    animation: fadeIn 400ms forwards linear;
+    animation: fadeIn 600ms forwards linear;
+  }
+}
+
+@keyframes wobble {
+  0% {
+    border-radius: 0px 30px 130px 0px / 0px 80px 250px 0px;
+  }
+  50% {
+    border-radius: 0px 130px 30px 0px / 0px 250px 80px 0px;
+  }
+  100% {
+    border-radius: 0px 30px 130px 0px / 0px 80px 250px 0px;
   }
 }
 

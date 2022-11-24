@@ -32,7 +32,7 @@ const PortfolioGallery = () => {
       setTimeout(() => {
         setAnimateOut(false);
         setAnimateIn(false);
-      }, 900);
+      }, 700);
     }, 900);
   };
 
