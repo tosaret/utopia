@@ -53,6 +53,10 @@
 .info {
   width: 50%;
   padding-left: 5%;
+
+  .imageMobile {
+    display: none;
+  }
 }
 
 .title {
@@ -194,5 +198,47 @@
     top: -100vh;
     opacity: 0;
     transform: scale(0.6);
+  }
+}
+
+@media (max-width: 999px) {
+  .portfolioGallery {
+    .portfolioContainer {
+      .descriptionContainer {
+        padding: 0;
+      }
+    }
+  }
+
+  .info {
+    width: 100%;
+
+    .title {
+      font-size: 32px;
+      line-height: 64px;
+
+      img {
+        max-width: 30px;
+        height: auto;
+      }
+    }
+
+    .label {
+      display: none;
+    }
+
+    .imageMobile {
+      display: block;
+      max-width: 90%;
+    }
+
+    .description {
+      padding: 0 20px 0 0;
+      font-size: 18px;
+      line-height: 36px;
+    }
+  }
+  .image {
+    display: none;
   }
 }

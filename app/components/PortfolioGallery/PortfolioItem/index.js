@@ -38,6 +38,9 @@ const PortfolioItem = ({ item, animateOut, animateIn, newBgColor }) => {
               ))}
             </div>
           </div>
+          <div className={styles.imageMobile}>
+            <img src={imageUrl} alt="" />
+          </div>
           <div className={styles.descriptionContainer}>
             <p className={styles.description}>{description}</p>
           </div>
