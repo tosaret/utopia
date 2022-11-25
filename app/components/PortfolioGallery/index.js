@@ -46,7 +46,6 @@ const PortfolioGallery = () => {
 
   const handleSwipeRight = (currentItem) => {
     if (currentItem === 1) {
-      console.log(portfolioItems.length);
       handlePagination(portfolioItems.length);
     }
     handlePagination(currentItem - 1);
