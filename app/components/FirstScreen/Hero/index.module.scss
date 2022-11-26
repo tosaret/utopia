@@ -10,8 +10,11 @@
       no-repeat;
     background-size: 720px 395px;
     width: 52.3%;
+    align-self: flex-end;
 
     img {
+      width: auto;
+      max-height: 720px;
       float: right;
       position: relative;
       top: 800px;
