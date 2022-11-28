@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import styles from "./index.module.scss";
 
-const PortfolioItem = ({ item, animateOut, animateIn, newBgColor }) => {
+const PortfolioItem = ({ item, animateOut, animateIn }) => {
   const {
     title,
     description,
@@ -10,7 +10,10 @@ const PortfolioItem = ({ item, animateOut, animateIn, newBgColor }) => {
     backgroundGradient,
     logoUrl,
     imageUrl,
-  } = item;
+  } = item[1];
+
+  var itemTags = [];
+  for (var i in tags) itemTags.push([tags[i]]);
 
   return (
     <div
@@ -27,7 +30,7 @@ const PortfolioItem = ({ item, animateOut, animateIn, newBgColor }) => {
               {title}
             </div>
             <div>
-              {tags.map((tag, index) => (
+              {itemTags.map((tag, index) => (
                 <span
                   key={index}
                   style={{ backgroundColor: tagsColor }}
@@ -50,7 +53,7 @@ const PortfolioItem = ({ item, animateOut, animateIn, newBgColor }) => {
         </div>
       </div>
       <div
-        style={{ background: newBgColor }}
+        //style={{ background: newBgColor }}
         className={styles.portfolioBottomWrapper}
       >
         <div

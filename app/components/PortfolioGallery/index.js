@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import { useSwipeable } from "react-swipeable";
+// import { useSwipeable } from "react-swipeable";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
 import classNames from "classnames";
 import PortfolioItem from "./PortfolioItem";
 
@@ -18,57 +21,79 @@ const PortfolioGallery = () => {
 
   const item = items[currentItem];
 
-  const handlePagination = (index) => {
-    const nextItem = items[index];
-    setNewBgColor(nextItem.backgroundGradient);
+  // const handlePagination = (index) => {
+  //   const nextItem = items[index];
+  //   setNewBgColor(nextItem.backgroundGradient);
 
+  //   setAnimateIn(false);
+  //   setAnimateOut(true);
+
+  //   setTimeout(() => {
+  //     setAnimateOut(false);
+  //     setAnimateIn(true);
+  //     setCurrentItem(parseInt(index));
+
+  //     setTimeout(() => {
+  //       setAnimateOut(false);
+  //       setAnimateIn(false);
+  //     }, 700);
+  //   }, 900);
+  // };
+
+  const handleStartTransition = () => {
     setAnimateIn(false);
     setAnimateOut(true);
-
-    setTimeout(() => {
-      setAnimateOut(false);
-      setAnimateIn(true);
-      setCurrentItem(parseInt(index));
-
-      setTimeout(() => {
-        setAnimateOut(false);
-        setAnimateIn(false);
-      }, 700);
-    }, 900);
   };
 
-  const handleSwipeLeft = (currentItem) => {
-    if (currentItem === portfolioItems.length) {
-      handlePagination(1);
-    }
-    handlePagination(currentItem + 1);
+  const handleEndTransition = () => {
+    setAnimateOut(false);
+    setAnimateIn(true);
   };
 
-  const handleSwipeRight = (currentItem) => {
-    if (currentItem === 1) {
-      handlePagination(portfolioItems.length);
-    }
-    handlePagination(currentItem - 1);
-  };
+  // const handleSwipeLeft = (currentItem) => {
+  //   if (currentItem === portfolioItems.length) {
+  //     handlePagination(1);
+  //   }
+  //   handlePagination(currentItem + 1);
+  // };
+
+  // const handleSwipeRight = (currentItem) => {
+  //   if (currentItem === 1) {
+  //     handlePagination(portfolioItems.length);
+  //   }
+  //   handlePagination(currentItem - 1);
+  // };
 
   useEffect(() => {
     setCurrentItem(1);
   }, []);
 
-  const handlers = useSwipeable({
-    onSwipedLeft: () => handleSwipeLeft(currentItem),
-    onSwipedRight: () => handleSwipeRight(currentItem),
-    trackMouse: true,
-  });
+  // const handlers = useSwipeable({
+  //   onSwipedLeft: () => handleSwipeLeft(currentItem),
+  //   onSwipedRight: () => handleSwipeRight(currentItem),
+  //   trackMouse: true,
+  // });
 
   return (
-    <div {...handlers} className={styles.portfolio}>
-      <PortfolioItem
-        item={item}
-        animateIn={animateIn}
-        animateOut={animateOut}
-        newBgColor={newBgColor}
-      />
+    <div className={styles.portfolio}>
+      <Swiper
+        loop={true}
+        speed={1500}
+        onSlideChangeTransitionStart={() => handleStartTransition()}
+        onSlideChangeTransitionEnd={() => handleEndTransition()}
+        onSlideChange={() => console.log("slide change")}
+      >
+        {portfolioItems.map((item, index) => (
+          <SwiperSlide key={index}>
+            <PortfolioItem
+              item={item}
+              animateIn={animateIn}
+              animateOut={animateOut}
+              // newBgColor={newBgColor}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
       <div className={styles.pagination}>
         {portfolioItems.map((item, index) => (
           <button
@@ -76,7 +101,7 @@ const PortfolioGallery = () => {
               [styles.active]: currentItem === parseInt(item[0]),
             })}
             key={index}
-            onClick={() => handlePagination(item[0])}
+            //onClick={() => handlePagination(item[0])}
           ></button>
         ))}
       </div>

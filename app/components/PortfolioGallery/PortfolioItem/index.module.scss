@@ -122,10 +122,10 @@
   .description {
     animation: fadeOutLeft 1200ms forwards linear;
   }
-  .portfolioBottomBg {
-    animation: scrollLeft 900ms forwards linear,
-      wobble 1000ms ease-in-out alternate infinite;
-  }
+  // .portfolioBottomBg {
+  //   animation: scrollLeft 900ms forwards linear,
+  //     wobble 1000ms ease-in-out alternate infinite;
+  // }
 }
 
 .animateIn {
