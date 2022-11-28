@@ -68,6 +68,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  opacity: 0;
 
   img {
     margin: 0 20px 0 0;
@@ -86,6 +87,7 @@
   font-size: 20px;
   line-height: 50px;
   letter-spacing: 1.3px;
+  opacity: 0;
 }
 
 .description {
@@ -96,12 +98,14 @@
   max-width: 470px;
   position: relative;
   left: 0;
+  opacity: 0;
 }
 
 .image {
   display: flex;
   width: 50%;
   position: relative;
+  opacity: 0;
 
   img {
     width: 100%;
@@ -113,14 +117,14 @@
 
 .animateOut {
   .image {
-    animation: fadeUpOut 400ms forwards linear;
+    animation: fadeUpOut 300ms forwards linear;
   }
   .title,
   .label {
-    animation: fadeUpOut 1200ms forwards linear;
+    animation: fadeUpOut 900ms forwards linear;
   }
   .description {
-    animation: fadeOutLeft 1200ms forwards linear;
+    animation: fadeOutLeft 900ms forwards linear;
   }
   // .portfolioBottomBg {
   //   animation: scrollLeft 900ms forwards linear,
@@ -130,12 +134,12 @@
 
 .animateIn {
   .image {
-    animation: fadeIn 700ms forwards linear;
+    animation: fadeIn 400ms forwards linear;
   }
   .title,
   .label,
   .description {
-    animation: fadeIn 600ms forwards linear;
+    animation: fadeIn 300ms forwards linear;
   }
 }
 
@@ -193,6 +197,7 @@
   0% {
     top: 0;
     transform: scale(1);
+    opacity: 1;
   }
   100% {
     top: -100vh;

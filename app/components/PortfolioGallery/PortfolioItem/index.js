@@ -1,7 +1,14 @@
 import classNames from "classnames";
 import styles from "./index.module.scss";
 
-const PortfolioItem = ({ item, animateOut, animateIn }) => {
+const PortfolioItem = ({
+  item,
+  animateOut,
+  animateIn,
+  active,
+  isPrev,
+  isNext,
+}) => {
   const {
     title,
     description,
@@ -18,8 +25,8 @@ const PortfolioItem = ({ item, animateOut, animateIn }) => {
   return (
     <div
       className={classNames(styles.portfolioGallery, {
-        [styles.animateOut]: animateOut,
-        [styles.animateIn]: animateIn,
+        [styles.animateOut]: animateOut && (isPrev || isNext),
+        [styles.animateIn]: animateIn && active,
       })}
     >
       <div className={styles.portfolioContainer}>
@@ -52,10 +59,7 @@ const PortfolioItem = ({ item, animateOut, animateIn }) => {
           <img src={imageUrl} alt="" />
         </div>
       </div>
-      <div
-        //style={{ background: newBgColor }}
-        className={styles.portfolioBottomWrapper}
-      >
+      <div className={styles.portfolioBottomWrapper}>
         <div
           style={{ background: backgroundGradient }}
           className={styles.portfolioBottomBg}
