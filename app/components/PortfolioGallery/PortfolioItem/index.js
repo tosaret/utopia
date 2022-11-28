@@ -5,10 +5,11 @@ const PortfolioItem = ({
   item,
   animateOut,
   animateIn,
-  active,
+  isActive,
   isPrev,
   isNext,
   moveDirection,
+  isVisible,
 }) => {
   const {
     title,
@@ -30,7 +31,7 @@ const PortfolioItem = ({
     <div
       className={classNames(styles.portfolioGallery, {
         [styles.animateOut]: animateOut && (isPrev || isNext),
-        [styles.animateIn]: animateIn && active,
+        [styles.animateIn]: animateIn && isActive,
       })}
     >
       <div

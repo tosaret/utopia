@@ -67,7 +67,7 @@
       width: 50%;
       height: 200%;
       bottom: -50%;
-      right: -45%;
+      right: -47%;
       background-color: #36d8c5;
       border-radius: 35%;
       animation: drift 3000ms infinite cubic-bezier(0.5, 0.7, 0.7, 0.5);
@@ -80,7 +80,7 @@
       width: 50%;
       height: 200%;
       bottom: -50%;
-      left: -45%;
+      left: -47%;
       background-color: #36d8c5;
       border-radius: 35%;
       animation: drift 3000ms infinite cubic-bezier(0.5, 0.7, 0.7, 0.5);
@@ -176,25 +176,21 @@
   .description {
     animation: fadeOutBottom 900ms forwards linear;
   }
-  // .portfolioBottomBg {
-  //   animation: scrollLeft 900ms forwards linear,
-  //     wobble 1000ms ease-in-out alternate infinite;
-  // }
 }
 
 .animateIn {
   .upperBackground {
-    animation: fadeIn 500ms forwards linear;
+    animation: fadeIn 700ms forwards linear;
   }
   .image {
-    animation: fadeIn 600ms forwards linear;
+    animation: fadeIn 800ms forwards linear;
   }
   .title,
   .label {
-    animation: fadeIn 300ms forwards linear;
+    animation: fadeIn 500ms forwards linear;
   }
   .description {
-    animation: fadeIn 700ms forwards linear;
+    animation: fadeIn 900ms forwards linear;
   }
 }
 

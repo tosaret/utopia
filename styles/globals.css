@@ -61,7 +61,7 @@ a {
 
 /* SWIPER STYLES */
 .swiper-wrapper {
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 }
 
 .swiper-pagination .swiper-pagination-bullet {
