@@ -14,6 +14,7 @@ const PortfolioItem = ({
     description,
     tags,
     tagsColor,
+    backgroundImage,
     backgroundGradient,
     logoUrl,
     imageUrl,
@@ -29,6 +30,10 @@ const PortfolioItem = ({
         [styles.animateIn]: animateIn && active,
       })}
     >
+      <div
+        className={styles.upperBackground}
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      />
       <div className={styles.portfolioContainer}>
         <div className={styles.info}>
           <div className={styles.titleContainer}>

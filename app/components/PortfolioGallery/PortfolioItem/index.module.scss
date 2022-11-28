@@ -1,10 +1,21 @@
 .portfolioGallery {
-  background: #f9f9f9 url(../../../../public/portfolio-bg.png) center repeat;
+  background-color: #fff;
   height: 100%;
   position: relative;
   display: flex;
   align-items: center;
   user-select: none;
+
+  .upperBackground {
+    transition: background-image 500ms ease-in-out;
+    background-position: center;
+    background-repeat: repeat;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    top: 0;
+    opacity: 0;
+  }
 
   .portfolioContainer {
     width: 100%;
@@ -116,6 +127,9 @@
 }
 
 .animateOut {
+  .upperBackground {
+    animation: fadeOut 200ms forwards linear;
+  }
   .image {
     animation: fadeUpOut 300ms forwards linear;
   }
@@ -124,7 +138,7 @@
     animation: fadeUpOut 900ms forwards linear;
   }
   .description {
-    animation: fadeOutLeft 900ms forwards linear;
+    animation: fadeOutBottom 900ms forwards linear;
   }
   // .portfolioBottomBg {
   //   animation: scrollLeft 900ms forwards linear,
@@ -133,13 +147,18 @@
 }
 
 .animateIn {
+  .upperBackground {
+    animation: fadeIn 500ms forwards linear;
+  }
   .image {
-    animation: fadeIn 400ms forwards linear;
+    animation: fadeIn 600ms forwards linear;
   }
   .title,
-  .label,
-  .description {
+  .label {
     animation: fadeIn 300ms forwards linear;
+  }
+  .description {
+    animation: fadeIn 700ms forwards linear;
   }
 }
 
@@ -155,13 +174,13 @@
   }
 }
 
-@keyframes fadeOutLeft {
+@keyframes fadeOutBottom {
   0% {
-    left: 0;
+    bottom: 0;
     opacity: 1;
   }
   100% {
-    left: -1000px;
+    bottom: -200px;
     opacity: 0;
   }
 }
