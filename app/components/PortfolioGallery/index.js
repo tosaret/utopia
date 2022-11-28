@@ -27,6 +27,7 @@ const PortfolioGallery = () => {
     setTimeout(() => {
       setAnimateOut(false);
       setAnimateIn(true);
+      setMoveDirection("");
     }, 500);
   };
 
@@ -47,7 +48,6 @@ const PortfolioGallery = () => {
         longSwipesRatio={0.1}
         onTransitionStart={() => handleStartTransition()}
         onSetTranslate={(swiper) => handleDrag(swiper)}
-        onSlideChangeTransitionEnd={() => setMoveDirection("")}
       >
         {portfolioItems.map((item, index) => (
           <SwiperSlide key={index}>
