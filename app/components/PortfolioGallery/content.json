@@ -7,7 +7,9 @@
     "imageUrl": "/portfolio-img1.png",
     "backgroundImage": "/portfolio-bg-1.png",
     "backgroundGradient": "linear-gradient(90deg, #FF8370 21.84%, #FF9D73 64.38%)",
-    "tagsColor": "rgba(255, 114, 97, 0.71)"
+    "tagsColor": "rgba(255, 114, 97, 0.71)",
+    "prevBgColor": "#d92b2b",
+    "nextBgColor": "#17D2BB"
   },
   "2": {
     "logoUrl": "/portfolio-logo1.png",
@@ -17,7 +19,9 @@
     "imageUrl": "/portfolio-img1.png",
     "backgroundImage": "/portfolio-bg-2.png",
     "backgroundGradient": "linear-gradient(90deg, #17D2BB 21.84%, #4AE4CE 96.13%)",
-    "tagsColor": "rgba(20, 187, 176, 0.76)"
+    "tagsColor": "rgba(20, 187, 176, 0.76)",
+    "prevBgColor": "#FF9D73",
+    "nextBgColor": "#5145CA"
   },
   "3": {
     "logoUrl": "/portfolio-logo1.png",
@@ -27,7 +31,9 @@
     "imageUrl": "/portfolio-img1.png",
     "backgroundImage": "/portfolio-bg-1.png",
     "backgroundGradient": "linear-gradient(90deg, #5145CA 21.84%, #112F6D 96.13%)",
-    "tagsColor": "rgba(81, 69, 202, 0.71)"
+    "tagsColor": "rgba(81, 69, 202, 0.71)",
+    "prevBgColor": "#4AE4CE",
+    "nextBgColor": "#d34c68"
   },
   "4": {
     "logoUrl": "/portfolio-logo1.png",
@@ -37,6 +43,8 @@
     "imageUrl": "/portfolio-img1.png",
     "backgroundImage": "/portfolio-bg-2.png",
     "backgroundGradient": "linear-gradient(90deg, #d34c68 21.84%, #d92b2b 96.13%)",
-    "tagsColor": "rgba(217, 43, 43, 0.76)"
+    "tagsColor": "rgba(217, 43, 43, 0.76)",
+    "prevBgColor": "#112F6D",
+    "nextBgColor": "#FF8370"
   }
 }

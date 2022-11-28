@@ -8,6 +8,7 @@ const PortfolioItem = ({
   active,
   isPrev,
   isNext,
+  moveDirection,
 }) => {
   const {
     title,
@@ -18,6 +19,8 @@ const PortfolioItem = ({
     backgroundGradient,
     logoUrl,
     imageUrl,
+    prevBgColor,
+    nextBgColor,
   } = item[1];
 
   var itemTags = [];
@@ -68,7 +71,20 @@ const PortfolioItem = ({
         <div
           style={{ background: backgroundGradient }}
           className={styles.portfolioBottomBg}
-        ></div>
+        >
+          {moveDirection === "prev" && (
+            <div
+              style={{ backgroundColor: prevBgColor }}
+              className={styles.bgLeft}
+            ></div>
+          )}
+          {moveDirection === "next" && (
+            <div
+              style={{ backgroundColor: nextBgColor }}
+              className={styles.bgRight}
+            ></div>
+          )}
+        </div>
       </div>
     </div>
   );

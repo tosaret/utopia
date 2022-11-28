@@ -15,6 +15,7 @@ const PortfolioGallery = () => {
   const [activeSlide, setActiveSlide] = useState(1);
   const [animateIn, setAnimateIn] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
+  const [moveDirection, setMoveDirection] = useState("");
 
   var portfolioItems = [];
   for (var i in items) portfolioItems.push([i, items[i]]);
@@ -29,6 +30,16 @@ const PortfolioGallery = () => {
     }, 500);
   };
 
+  const handleDrag = (swiper) => {
+    console.log(swiper.activeSlide);
+    if (swiper.swipeDirection === "next") {
+      setMoveDirection("next");
+    }
+    if (swiper.swipeDirection === "prev") {
+      setMoveDirection("prev");
+    }
+  };
+
   return (
     <div className={styles.portfolio}>
       <Swiper
@@ -36,7 +47,9 @@ const PortfolioGallery = () => {
         pagination={{ clickable: true }}
         loop={true}
         speed={600}
-        onSlideChangeTransitionStart={() => handleStartTransition()}
+        onTransitionStart={() => handleStartTransition()}
+        onSliderMove={(swiper) => handleDrag(swiper)}
+        onTransitionEnd={() => setMoveDirection("")}
       >
         {portfolioItems.map((item, index) => (
           <SwiperSlide key={index}>
@@ -48,6 +61,7 @@ const PortfolioGallery = () => {
                 active={isActive}
                 isPrev={isPrev}
                 isNext={isNext}
+                moveDirection={moveDirection}
               />
             )}
           </SwiperSlide>
