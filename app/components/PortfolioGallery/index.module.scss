@@ -2,12 +2,12 @@
   position: relative;
   height: 100vh;
 
-  cursor: url("../../../public/portfolio-cursor.svg") 0 0, pointer;
+  cursor: url("../../../public/portfolio-cursor.svg") 60 35, pointer;
   cursor: -webkit-image-set(
         url("../../../public/portfolio-cursor.png") 1x,
         url("../../../public/portfolio-cursor@2x.png") 2x
       )
-      0 0,
+      60 35,
     pointer; /* Webkit */
 }
 
