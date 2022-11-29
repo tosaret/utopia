@@ -8,15 +8,26 @@ const Offer = ({ active }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [prevTab, setPrevTab] = useState(0);
   const [opening, setOpening] = useState(false);
+  const [animateIn, setAnimateIn] = useState(false);
+  const [animateOut, setAnimateOut] = useState(false);
   const [activeClassName, setActiveClassName] = useState("");
   const [title, setTitle] = useState(ReactHtmlParser(texts[activeTab].title));
 
   const changeOffer = (event, index) => {
     event.preventDefault();
-    setActiveTab((prev) => {
-      setPrevTab(prev);
-      return index;
-    });
+
+    setTimeout(
+      () => {
+        setActiveTab((prev) => {
+          setPrevTab(prev);
+          return index;
+        });
+      },
+      activeTab === 0 ? 0 : 500
+    );
+
+    setAnimateIn(false);
+    setAnimateOut(true);
   };
 
   useEffect(() => {
@@ -28,6 +39,9 @@ const Offer = ({ active }) => {
     prevTab === 0 && menuEl.classList.add("rollOut");
     prevTab === 0 && circleEl.classList.add([styles.circleOut]);
     prevTab === 0 && active && setOpening(true);
+
+    setAnimateOut(false);
+    setAnimateIn(true);
 
     setActiveClassName(
       (activeTab === 1 && styles.web) ||
@@ -69,6 +83,8 @@ const Offer = ({ active }) => {
           id="offer-shadow"
           className={classNames(styles.menuShadow, {
             fadeRight: activeTab === 0 && active,
+            [styles.animateIn]: animateIn,
+            [styles.animateOut]: animateOut,
             [styles.webShadow]: activeTab === 1,
             [styles.mobileShadow]: activeTab === 2,
             [styles.consultingShadow]: activeTab === 3,
