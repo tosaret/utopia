@@ -20,6 +20,7 @@
   .portfolioContainer {
     width: 100%;
     max-width: 1200px;
+    height: 100vh;
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -264,10 +265,18 @@
         padding: 0;
       }
     }
+    .portfolioBottomBg {
+      .bgLeft,
+      .bgRight {
+        display: none;
+      }
+    }
   }
 
   .info {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 
     .title {
       font-size: 32px;
