@@ -1,0 +1,26 @@
+{
+  "1": {
+    "firstName": "Jakob",
+    "lastName": "Kirchner",
+    "text": "We are a team of people joined by passion for technology and product creation. We love to create high quality, tidy, expandable software with an intuitive and charming user-lay.",
+    "photoUrl": "/leader1.png"
+  },
+  "2": {
+    "firstName": "Jakub",
+    "lastName": "Walusiak",
+    "text": "We are a team of people joined by passion for technology and product creation. We love to create high quality, tidy, expandable software with an intuitive and charming user-lay.",
+    "photoUrl": "/leader2.png"
+  },
+  "3": {
+    "firstName": "Mateusz",
+    "lastName": "Pomykalski",
+    "text": "We are a team of people joined by passion for technology and product creation. We love to create high quality, tidy, expandable software with an intuitive and charming user-lay.",
+    "photoUrl": "/leader3.png"
+  },
+  "4": {
+    "firstName": "Thomas",
+    "lastName": "Kirchner",
+    "text": "We are a team of people joined by passion for technology and product creation. We love to create high quality, tidy, expandable software with an intuitive and charming user-lay.",
+    "photoUrl": "/leader4.png"
+  }
+}

@@ -24,8 +24,8 @@ const PortfolioItem = ({
     nextBgColor,
   } = item[1];
 
-  var itemTags = [];
-  for (var i in tags) itemTags.push([tags[i]]);
+  let itemTags = [];
+  for (let i in tags) itemTags.push([tags[i]]);
 
   return (
     <div

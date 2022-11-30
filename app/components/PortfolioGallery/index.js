@@ -17,8 +17,8 @@ const PortfolioGallery = () => {
   const [animateOut, setAnimateOut] = useState(false);
   const [moveDirection, setMoveDirection] = useState("");
 
-  var portfolioItems = [];
-  for (var i in items) portfolioItems.push([i, items[i]]);
+  let portfolioItems = [];
+  for (let i in items) portfolioItems.push([i, items[i]]);
 
   const handleStartTransition = () => {
     setAnimateIn(false);
