@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "find:unused": "next-unused"
   },
   "dependencies": {
     "classnames": "^2.3.2",
@@ -16,10 +17,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-full-page": "^0.1.12",
-    "react-full-page-forward-ref": "^0.1.11",
     "react-html-parser": "^2.0.2",
-    "react-page-scroller": "^2.3.1",
-    "react-swipeable": "^7.0.0",
     "sass": "^1.56.0",
     "swiper": "^8.4.5"
   }
