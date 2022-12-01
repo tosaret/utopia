@@ -1,10 +1,14 @@
 import styles from "./index.module.scss";
-
 import items from "../content.json";
 
-const LeadersIntro = () => {
+const LeadersIntro = ({ changePage, changeIndex }) => {
   let leadersItems = [];
   for (let i in items) leadersItems.push([i, items[i]]);
+
+  const handleLeaderClick = (index) => {
+    changePage(5);
+    changeIndex(index);
+  };
 
   return (
     <div className={styles.leadersIntro}>
@@ -19,7 +23,11 @@ const LeadersIntro = () => {
 
       <div className={styles.leaders}>
         {leadersItems.map((item, index) => (
-          <div key={index}>
+          <div
+            key={index}
+            className={styles.item}
+            onClick={() => handleLeaderClick(index)}
+          >
             <img src={item[1].photoUrl} alt="" />
             <div>
               <strong>{`${item[1].firstName} ${item[1].lastName}`}</strong>

@@ -28,6 +28,10 @@
     font-weight: 700;
     font-size: 18px;
 
+    .item {
+      cursor: pointer;
+    }
+
     strong {
       position: relative;
       top: -25px;

@@ -43,7 +43,6 @@ const PortfolioGallery = () => {
         preventInteractionOnTransition={true}
         loop={true}
         speed={800}
-        watchSlidesProgress={true}
         longSwipesMs={30000}
         longSwipesRatio={0.1}
         onTransitionStart={() => handleStartTransition()}

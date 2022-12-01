@@ -1,0 +1,51 @@
+.leadersGallery {
+  cursor: url("../../../../public/portfolio-cursor.svg") 60 35, pointer;
+  cursor: -webkit-image-set(
+        url("../../../../public/portfolio-cursor.png") 1x,
+        url("../../../../public/portfolio-cursor@2x.png") 2x
+      )
+      60 35,
+    pointer; /* Webkit */
+}
+
+.item {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 150px 0 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .name {
+    font-weight: 700;
+    font-size: 180px;
+    line-height: 90%;
+  }
+
+  p {
+    max-width: 410px;
+    margin: 100px 0 0;
+    font-size: 18px;
+    line-height: 180%;
+  }
+
+  .descImage {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      margin-top: -200px;
+    }
+  }
+
+  &.textRight {
+    .name {
+      text-align: right;
+    }
+
+    .descImage {
+      flex-direction: row-reverse;
+    }
+  }
+}

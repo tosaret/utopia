@@ -8,9 +8,11 @@ import Offer from "../app/components/Offer";
 import PortfolioIntro from "../app/components/PortfolioIntro";
 import PortfolioGallery from "../app/components/PortfolioGallery";
 import LeadersIntro from "../app/components/Leaders/Intro";
+import LeadersGallery from "../app/components/Leaders/Gallery";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
+  const [leadersIndex, setLeadersIndex] = useState(0);
 
   const fullPageRef = useRef();
 
@@ -21,6 +23,10 @@ export default function Home() {
 
   const afterChange = ({ to }) => {
     setCurrentPage(to);
+  };
+
+  const handleLeadersIndex = (index) => {
+    setLeadersIndex(index);
   };
 
   return (
@@ -49,7 +55,13 @@ export default function Home() {
           <PortfolioGallery />
         </Slide>
         <Slide>
-          <LeadersIntro />
+          <LeadersIntro
+            changePage={changePage}
+            changeIndex={handleLeadersIndex}
+          />
+        </Slide>
+        <Slide>
+          <LeadersGallery initialSlide={leadersIndex} />
         </Slide>
       </FullPage>
     </>
