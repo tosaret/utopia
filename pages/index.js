@@ -40,7 +40,7 @@ export default function Home() {
       <FullPage
         ref={fullPageRef}
         afterChange={afterChange}
-        //initialSlide={4}
+        //initialSlide={5}
       >
         <Slide>
           <FirstScreen active={currentPage === 0} changePage={changePage} />

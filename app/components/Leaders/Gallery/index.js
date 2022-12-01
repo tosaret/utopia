@@ -20,7 +20,7 @@ const LeadersGallery = ({ initialSlide }) => {
     <div className={styles.leadersGallery}>
       <Swiper
         preventInteractionOnTransition={true}
-        //loop={true}
+        slidesPerView={"auto"}
         speed={800}
         longSwipesMs={30000}
         longSwipesRatio={0.1}
@@ -30,10 +30,10 @@ const LeadersGallery = ({ initialSlide }) => {
         }}
       >
         {leadersItems.map((item, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className={styles.slide}>
             <div
               className={classNames(styles.item, {
-                [styles.textRight]: index % 2 === 0,
+                [styles.textRight]: index % 2 !== 0,
               })}
             >
               <div className={styles.name}>{item[1].lastName}</div>

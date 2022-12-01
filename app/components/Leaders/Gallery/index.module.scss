@@ -6,12 +6,15 @@
       )
       60 35,
     pointer; /* Webkit */
+
+  .slide {
+    width: 85%;
+  }
 }
 
 .item {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 150px 0 0;
+  margin-top: 170px;
+  padding: 0 5vh;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,7 +26,7 @@
 
   .name {
     font-weight: 700;
-    font-size: 180px;
+    font-size: 170px;
     line-height: 90%;
   }
 
@@ -39,7 +42,9 @@
     justify-content: space-between;
 
     img {
-      margin-top: -200px;
+      position: relative;
+      top: -200px;
+      right: -100px;
     }
   }
 
@@ -50,6 +55,10 @@
 
     .descImage {
       flex-direction: row-reverse;
+
+      img {
+        right: 0;
+      }
     }
   }
 }
