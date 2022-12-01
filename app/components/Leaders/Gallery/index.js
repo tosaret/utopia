@@ -13,14 +13,14 @@ const LeadersGallery = ({ initialSlide }) => {
   for (let i in items) leadersItems.push([i, items[i]]);
 
   useEffect(() => {
-    swiperRef.current.slideTo(initialSlide + 1);
+    swiperRef.current.slideTo(initialSlide);
   }, [initialSlide]);
 
   return (
     <div className={styles.leadersGallery}>
       <Swiper
         preventInteractionOnTransition={true}
-        loop={true}
+        //loop={true}
         speed={800}
         longSwipesMs={30000}
         longSwipesRatio={0.1}

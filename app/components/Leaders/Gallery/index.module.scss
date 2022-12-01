@@ -17,6 +17,10 @@
   flex-direction: column;
   justify-content: center;
 
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+
   .name {
     font-weight: 700;
     font-size: 180px;

@@ -4,7 +4,10 @@
   position: relative;
   display: flex;
   align-items: center;
-  user-select: none;
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 
   .upperBackground {
     transition: background-image 500ms ease-in-out;
