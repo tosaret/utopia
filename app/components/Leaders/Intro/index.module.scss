@@ -38,3 +38,27 @@
     }
   }
 }
+
+@media (max-width: 999px) {
+  .leadersIntro {
+    h2 {
+      font-size: 48px;
+      text-align: left;
+      padding: 0 20px;
+    }
+    .description {
+      padding: 0 20px;
+      margin: 0;
+      text-align: left;
+    }
+    .leaders {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+
+      .item {
+        width: calc(50% - 60px);
+      }
+    }
+  }
+}

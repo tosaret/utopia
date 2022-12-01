@@ -85,3 +85,47 @@
     }
   }
 }
+
+@media (max-width: 999px) {
+  .leadersGallery {
+    .slide {
+      width: 100%;
+    }
+    :global(.swiper-pagination) {
+      top: calc(100vh + 50px);
+    }
+  }
+
+  .item {
+    .name {
+      font-size: 60px;
+    }
+    .descImage {
+      flex-direction: column-reverse;
+
+      p {
+        width: 100%;
+        margin: 0;
+      }
+
+      .image {
+        top: 0;
+        right: 0;
+      }
+    }
+
+    &.textRight {
+      .name {
+        text-align: left;
+      }
+
+      .descImage {
+        flex-direction: column-reverse;
+      }
+
+      .image {
+        right: 0;
+      }
+    }
+  }
+}
