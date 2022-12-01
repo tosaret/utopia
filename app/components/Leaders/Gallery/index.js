@@ -1,7 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 import { useRef, useEffect } from "react";
 import classNames from "classnames";
 
+import "swiper/css/pagination";
 import styles from "./index.module.scss";
 
 import items from "../content.json";
@@ -19,6 +21,8 @@ const LeadersGallery = ({ initialSlide }) => {
   return (
     <div className={styles.leadersGallery}>
       <Swiper
+        modules={[Pagination]}
+        pagination={{ clickable: true }}
         preventInteractionOnTransition={true}
         slidesPerView={"auto"}
         speed={800}
@@ -40,7 +44,9 @@ const LeadersGallery = ({ initialSlide }) => {
               <div className={styles.name}>{item[1].firstName}</div>
               <div className={styles.descImage}>
                 <p>{item[1].text}</p>
-                <img src={item[1].photoUrl} alt="" />
+                <div className={styles.image}>
+                  <img src={item[1].photoUrl} alt="" />
+                </div>
               </div>
             </div>
           </SwiperSlide>
