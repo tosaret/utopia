@@ -8,13 +8,13 @@
     pointer; /* Webkit */
 
   .slide {
-    width: 85%;
+    width: 75vw;
   }
 }
 
 .item {
   margin-top: 170px;
-  padding: 0 5vh;
+  padding: 0 5vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,12 +26,12 @@
 
   .name {
     font-weight: 700;
-    font-size: 170px;
+    font-size: 150px;
     line-height: 90%;
   }
 
   p {
-    max-width: 410px;
+    max-width: 420px;
     margin: 100px 0 0;
     font-size: 18px;
     line-height: 180%;
@@ -44,7 +44,7 @@
     img {
       position: relative;
       top: -200px;
-      right: -100px;
+      right: -150px;
     }
   }
 
@@ -57,7 +57,7 @@
       flex-direction: row-reverse;
 
       img {
-        right: 0;
+        right: 50px;
       }
     }
   }
