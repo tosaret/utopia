@@ -15,7 +15,7 @@ const LeadersGallery = ({ initialSlide }) => {
   for (let i in items) leadersItems.push([i, items[i]]);
 
   useEffect(() => {
-    swiperRef.current.slideTo(initialSlide);
+    swiperRef.current.slideTo(initialSlide, 0);
   }, [initialSlide]);
 
   return (
