@@ -23,7 +23,7 @@
   .portfolioContainer {
     width: 100%;
     max-width: 1200px;
-    height: 100vh;
+    height: 100%;
     margin: 0 auto;
     position: relative;
     z-index: 2;
@@ -255,7 +255,7 @@
     opacity: 1;
   }
   100% {
-    top: -100vh;
+    top: -100%;
     opacity: 0;
     transform: scale(0.6);
   }

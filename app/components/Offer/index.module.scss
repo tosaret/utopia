@@ -1,5 +1,5 @@
 .offer {
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -596,7 +596,7 @@
     flex-direction: column;
     justify-content: flex-start;
     gap: 30px;
-    height: 100vh;
+    height: 100%;
 
     .text {
       width: 100%;
@@ -644,7 +644,7 @@
     animation: none;
     opacity: 1;
     width: 90%;
-    height: 100vh;
+    height: 100%;
     top: 0;
     right: initial;
     left: 40%;
