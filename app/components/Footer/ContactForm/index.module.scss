@@ -1,0 +1,96 @@
+.form {
+  input[type="email"] {
+    background: #373538;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+    height: 54px;
+    width: 100%;
+    padding: 0 23px;
+    color: #fff;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea {
+    background: #373538;
+    border-radius: 10px;
+    width: 100%;
+    height: 140px;
+    box-shadow: none;
+    border: none;
+    resize: none;
+    padding: 18px 23px;
+    color: #fff;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    margin: 22px 0 0;
+    float: right;
+    width: 156px;
+    height: 42px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 42px;
+    color: #fff;
+    background: #373538;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.formItem {
+  margin: 12px 0;
+}
+
+.formCheckbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  input {
+    display: none;
+  }
+
+  label {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 11px;
+    letter-spacing: 0;
+    cursor: pointer;
+
+    span {
+      position: relative;
+      top: 1px;
+      display: block;
+      content: "";
+      width: 20px;
+      height: 20px;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      float: left;
+      margin: 0 9px 0 0;
+      transition: all 300ms ease-in-out;
+    }
+  }
+
+  [type="checkbox"]:checked + span {
+    background: #fff;
+  }
+
+  [type="checkbox"]:checked + span:before {
+    content: "\2713";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    color: #333;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,62 @@
+.footer {
+  background: #111;
+  //height: 600px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 25px;
+  letter-spacing: 0.09em;
+  color: #ffffff;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    gap: 172px;
+    max-width: 1080px;
+    padding: 130px 16px 30px;
+    margin: 0 auto;
+
+    .textBlock {
+      width: 50%;
+
+      .thomas {
+        display: flex;
+        justify-content: flex-start;
+        gap: 12px;
+        margin: 0 0 30px;
+
+        strong {
+          display: block;
+          font-weight: 700;
+          font-size: 20px;
+          line-height: 23px;
+          margin: 10px 0;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 21px;
+        }
+      }
+    }
+
+    .form {
+      width: 50%;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1080px;
+    padding: 64px 16px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140.9%;
+
+    > div:last-child {
+      text-align: right;
+    }
+  }
+}

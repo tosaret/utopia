@@ -28,7 +28,7 @@ const Navigation = ({ changePage }) => {
           <Link href="" onClick={() => changePage(4)}>
             About Us
           </Link>
-          <Link href="" onClick={() => changePage(2)}>
+          <Link href="" onClick={() => changePage(6)}>
             Contact
           </Link>
         </nav>

@@ -9,6 +9,7 @@ import PortfolioIntro from "../app/components/PortfolioIntro";
 import PortfolioGallery from "../app/components/PortfolioGallery";
 import LeadersIntro from "../app/components/Leaders/Intro";
 import LeadersGallery from "../app/components/Leaders/Gallery";
+import Footer from "../app/components/Footer";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -40,7 +41,7 @@ export default function Home() {
       <FullPage
         ref={fullPageRef}
         afterChange={afterChange}
-        //initialSlide={5}
+        //initialSlide={6}
       >
         <Slide>
           <FirstScreen active={currentPage === 0} changePage={changePage} />
@@ -62,6 +63,9 @@ export default function Home() {
         </Slide>
         <Slide>
           <LeadersGallery initialSlide={leadersIndex} />
+        </Slide>
+        <Slide style={{ height: "800px" }}>
+          <Footer />
         </Slide>
       </FullPage>
     </>
