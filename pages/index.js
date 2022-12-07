@@ -64,8 +64,8 @@ export default function Home() {
         <Slide>
           <LeadersGallery initialSlide={leadersIndex} />
         </Slide>
-        <Slide style={{ height: "800px" }}>
-          <Footer />
+        <Slide>
+          <Footer active={currentPage === 6} />
         </Slide>
       </FullPage>
     </>

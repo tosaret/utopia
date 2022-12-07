@@ -1,6 +1,23 @@
+.footerWrapper {
+  position: relative;
+  height: 100vh;
+  background: url(../../../public/footer-bg.png) center top -50vh no-repeat;
+  background-size: 100% auto;
+  transition: background-position 300ms ease-in,
+    background-color 50ms ease-in-out;
+
+  &.active {
+    background-color: rgba(0, 0, 0, 0.47);
+    background-position: center top 0;
+  }
+}
+
 .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   background: #111;
-  //height: 600px;
+  width: 100vw;
   font-weight: 500;
   font-size: 14px;
   line-height: 25px;
@@ -10,7 +27,7 @@
   .top {
     display: flex;
     justify-content: space-between;
-    gap: 172px;
+    gap: 128px;
     max-width: 1080px;
     padding: 130px 16px 30px;
     margin: 0 auto;
@@ -29,7 +46,7 @@
           font-weight: 700;
           font-size: 20px;
           line-height: 23px;
-          margin: 10px 0;
+          margin: 12px 0;
         }
 
         p {
@@ -55,8 +72,18 @@
     font-size: 12px;
     line-height: 140.9%;
 
+    > div {
+      width: 33.3%;
+    }
+
     > div:last-child {
       text-align: right;
+    }
+
+    .footerLogo {
+      img {
+        margin: 0 auto;
+      }
     }
   }
 }
