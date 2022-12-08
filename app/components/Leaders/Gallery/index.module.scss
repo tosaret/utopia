@@ -90,6 +90,8 @@
 
 @media (max-width: 999px) {
   .leadersGallery {
+    top: -80px;
+
     .slide {
       width: 85%;
     }
@@ -112,6 +114,7 @@
       p {
         width: 100%;
         margin: 0;
+        font-size: 17px;
       }
 
       .image {

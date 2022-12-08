@@ -70,3 +70,33 @@
     }
   }
 }
+
+@media (max-width: 999px) {
+  .footer {
+    .top {
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 50px;
+
+      .textBlock,
+      .form {
+        width: 100%;
+      }
+    }
+    .bottom {
+      flex-direction: column;
+      gap: 24px;
+      padding-bottom: 32px;
+
+      > div {
+        width: 100%;
+        text-align: left !important;
+      }
+      .footerLogo {
+        img {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
