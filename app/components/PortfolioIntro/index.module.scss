@@ -3,16 +3,16 @@
   background-size: cover;
   position: absolute;
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   animation: spin 300s infinite linear;
 }
 
 @keyframes spin {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg), scale(2);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg), scale(2);
   }
 }
 
