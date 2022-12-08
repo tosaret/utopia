@@ -43,28 +43,28 @@ export default function Home() {
         afterChange={afterChange}
         //initialSlide={6}
       >
-        <Slide>
+        <Slide className="slide">
           <FirstScreen active={currentPage === 0} changePage={changePage} />
         </Slide>
-        <Slide>
+        <Slide className="slide">
           <Offer active={currentPage === 1} />
         </Slide>
-        <Slide>
+        <Slide className="slide">
           <PortfolioIntro changePage={changePage} />
         </Slide>
-        <Slide>
+        <Slide className="slide">
           <PortfolioGallery />
         </Slide>
-        <Slide>
+        <Slide className="slide">
           <LeadersIntro
             changePage={changePage}
             changeIndex={handleLeadersIndex}
           />
         </Slide>
-        <Slide>
+        <Slide className="slide">
           <LeadersGallery initialSlide={leadersIndex} />
         </Slide>
-        <Slide>
+        <Slide className="slide slide-footer">
           <Footer active={currentPage === 6} />
         </Slide>
       </FullPage>

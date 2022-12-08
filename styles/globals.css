@@ -59,6 +59,14 @@ a {
   }
 }
 
+.slide {
+  height: 100vh !important;
+  overflow: hidden;
+}
+.slide-footer {
+  height: auto !important;
+}
+
 /* SWIPER STYLES */
 .swiper-wrapper {
   transition-timing-function: ease-in-out;
