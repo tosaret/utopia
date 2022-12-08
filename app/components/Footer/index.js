@@ -19,7 +19,12 @@ const Footer = ({ active }) => {
           <div className={styles.textBlock}>
             <div className={styles.thomas}>
               <div>
-                <Image src={thomasPhoto} width={80} height={80} />
+                <Image
+                  src={thomasPhoto}
+                  width={80}
+                  height={80}
+                  alt="Thomas Kirchner"
+                />
               </div>
               <div>
                 <strong>Hi I’m Thomas</strong>
@@ -51,7 +56,7 @@ const Footer = ({ active }) => {
             </p>
           </div>
           <div className={styles.footerLogo}>
-            <Image src={footerLogo} width={182} height={54} />
+            <Image src={footerLogo} width={182} height={54} alt="Utopia" />
           </div>
           <div>
             <p>
