@@ -1,54 +1,33 @@
 import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 import styles from "./index.module.scss";
 
 const ContactForm = () => {
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [messageSent, setMessageSent] = useState(false);
-  const [sendInProgress, setSendInProgress] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    setSendInProgress(true);
-    fetch("/api/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        message: message,
-      }),
-    })
-      .then((res) => {
-        setSendInProgress(false);
-        setMessageSent(true);
-      })
-      .catch((err) => {
-        console.log(err);
-        setSendInProgress(false);
-        setMessageSent(true);
-      });
-  };
+  const [state, handleSubmit] = useForm("xdojqpab");
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.formItem}>
         <input
+          id="email"
           type="email"
-          required
+          name="email"
           placeholder="Email address"
-          onChange={() => setEmail(event.target.value)}
         />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
       <div className={styles.formItem}>
         <textarea
-          required
+          id="message"
+          name="message"
           placeholder="Your idea"
-          onChange={() => setMessage(event.target.value)}
         ></textarea>
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+        />
       </div>
       <div className={(styles.formItem, styles.formCheckbox)}>
         <label>
@@ -58,11 +37,11 @@ const ContactForm = () => {
           above form in order to reply to my message.*
         </label>
       </div>
-      <button type="submit">
-        {sendInProgress && "Sending..."}
-        {messageSent && "Sent"}
-        {!sendInProgress && !messageSent && "Submit"}
+      <button type="submit" disabled={state.submitting}>
+        {state.submitting && "Submitting..."}
+        {!state.submitting && "Submit"}
       </button>
+      <ValidationError errors={state.errors} />
     </form>
   );
 };
