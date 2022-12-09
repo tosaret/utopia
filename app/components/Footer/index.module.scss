@@ -1,4 +1,20 @@
+.footerActive {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    z-index: 2;
+    top: -100vh;
+    content: "";
+    width: 100vw;
+    height: 150vh;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
 .footer {
+  position: relative;
+  z-index: 3;
   background: #111;
   width: 100vw;
   font-weight: 500;

@@ -10,8 +10,8 @@ import classNames from "classnames";
 const Footer = ({ active }) => {
   return (
     <div
-      className={classNames(styles.footerWrapper, {
-        [styles.active]: active,
+      className={classNames({
+        [styles.footerActive]: active,
       })}
     >
       <div className={styles.footer}>

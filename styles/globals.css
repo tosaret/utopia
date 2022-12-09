@@ -65,6 +65,7 @@ a {
 }
 .slide-footer {
   height: auto !important;
+  overflow: visible;
 }
 
 /* SWIPER STYLES */
