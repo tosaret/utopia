@@ -13,6 +13,7 @@ import Footer from "../app/components/Footer";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
+  const [nextPage, setNextPage] = useState(0);
   const [leadersIndex, setLeadersIndex] = useState(0);
 
   const fullPageRef = useRef();
@@ -24,6 +25,10 @@ export default function Home() {
 
   const afterChange = ({ to }) => {
     setCurrentPage(to);
+  };
+
+  const beforeChange = ({ to }) => {
+    setNextPage(to);
   };
 
   const handleLeadersIndex = (index) => {
@@ -41,6 +46,7 @@ export default function Home() {
       <FullPage
         ref={fullPageRef}
         afterChange={afterChange}
+        beforeChange={beforeChange}
         //initialSlide={6}
       >
         <Slide className="slide">
@@ -65,7 +71,7 @@ export default function Home() {
           <LeadersGallery initialSlide={leadersIndex} />
         </Slide>
         <Slide className="slide slide-footer">
-          <Footer active={currentPage === 6} />
+          <Footer active={nextPage === 6} />
         </Slide>
       </FullPage>
     </>
