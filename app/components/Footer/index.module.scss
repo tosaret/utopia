@@ -2,6 +2,7 @@
   position: relative;
 
   &:before {
+    display: none;
     position: absolute;
     z-index: 2;
     top: -100vh;
@@ -14,6 +15,7 @@
   }
 
   &.active::before {
+    display: block;
     opacity: 1;
   }
 }
