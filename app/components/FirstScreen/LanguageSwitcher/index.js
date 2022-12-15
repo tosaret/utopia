@@ -13,17 +13,17 @@ const LanguageSwitcher = ({ lang, setLang }) => {
   return (
     <div className={styles.langSwitcher}>
       <a onClick={() => setShowLangDropdown(!showLangDropdown)}>
-        {lang === 0 ? "EN" : lang === 1 ? "PL" : "DE"} <span>&#9662;</span>
+        {lang === 1 ? "EN" : lang === 2 ? "PL" : "DE"} <span>&#9662;</span>
       </a>
       {showLangDropdown && (
         <div className={styles.dropdown}>
-          <Link href="" onClick={() => handleLangChange(0)}>
+          <Link href="" onClick={() => handleLangChange(1)}>
             EN
           </Link>
-          <Link href="" onClick={() => handleLangChange(1)}>
+          <Link href="" onClick={() => handleLangChange(2)}>
             PL
           </Link>
-          <Link href="" onClick={() => handleLangChange(2)}>
+          <Link href="" onClick={() => handleLangChange(3)}>
             DE
           </Link>
         </div>

@@ -25,7 +25,7 @@ export default function Home({ data }) {
   const router = useRouter();
   const fullPageRef = useRef();
 
-  const [lang, setLang] = useState(0);
+  const [lang, setLang] = useState(1);
   const [currentPage, setCurrentPage] = useState(0);
   const [nextPage, setNextPage] = useState(0);
 
@@ -69,10 +69,19 @@ export default function Home({ data }) {
           />
         </Slide>
         <Slide className="slide">
-          <Offer active={nextPage === 1} />
+          <Offer
+            active={nextPage === 1}
+            menuTexts={data.offersMenu}
+            content={data.offers}
+            lang={lang}
+          />
         </Slide>
         <Slide className="slide">
-          <PortfolioIntro changePage={changePage} />
+          <PortfolioIntro
+            changePage={changePage}
+            content={data.portfolioIntro}
+            lang={lang}
+          />
         </Slide>
         <Slide className="slide">
           <PortfolioGallery />

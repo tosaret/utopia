@@ -1,17 +1,18 @@
 import ReactHtmlParser from "react-html-parser";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
-import texts from "./content.json";
 import styles from "./index.module.scss";
 
-const Offer = ({ active }) => {
+const Offer = ({ active, menuTexts, content, lang }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [prevTab, setPrevTab] = useState(0);
   const [opening, setOpening] = useState(false);
   const [animateIn, setAnimateIn] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
   const [activeClassName, setActiveClassName] = useState("");
-  const [title, setTitle] = useState(ReactHtmlParser(texts[activeTab].title));
+  const [title, setTitle] = useState(
+    ReactHtmlParser(content[activeTab].title[lang])
+  );
 
   const changeOffer = (event, index) => {
     event.preventDefault();
@@ -53,11 +54,15 @@ const Offer = ({ active }) => {
     );
 
     setTimeout(() => {
-      setTitle(ReactHtmlParser(texts[activeTab].title));
+      setTitle(ReactHtmlParser(content[activeTab].title[lang]));
       textEl.classList.remove("fadeOut");
       menuEl.classList.remove("rollOut");
     }, 500);
   }, [activeTab]);
+
+  useEffect(() => {
+    setTitle(ReactHtmlParser(content[activeTab].title[lang]));
+  }, [lang]);
 
   return (
     <section className={classNames(styles.offer, activeClassName)}>
@@ -75,7 +80,7 @@ const Offer = ({ active }) => {
         })}
       >
         <h2>{title}</h2>
-        <p>{ReactHtmlParser(texts[activeTab].text)}</p>
+        <p>{ReactHtmlParser(content[activeTab].text[lang])}</p>
       </div>
 
       <div className={styles.menuBlock}>
@@ -110,42 +115,42 @@ const Offer = ({ active }) => {
               className={classNames({ [styles.active]: activeTab === 1 })}
               onClick={() => changeOffer(event, 1)}
             >
-              Web
+              {menuTexts["web"][lang]}
             </a>
             <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 2 })}
               onClick={() => changeOffer(event, 2)}
             >
-              Mobile
+              {menuTexts["mobile"][lang]}
             </a>
             <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 3 })}
               onClick={() => changeOffer(event, 3)}
             >
-              Consulting
+              {menuTexts["consulting"][lang]}
             </a>
             <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 4 })}
               onClick={() => changeOffer(event, 4)}
             >
-              Services
+              {menuTexts["services"][lang]}
             </a>
             <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 5 })}
               onClick={() => changeOffer(event, 5)}
             >
-              Cloud
+              {menuTexts["cloud"][lang]}
             </a>
             <a
               href="#"
               className={classNames({ [styles.active]: activeTab === 6 })}
               onClick={() => changeOffer(event, 6)}
             >
-              Design
+              {menuTexts["design"][lang]}
             </a>
           </div>
         </div>
