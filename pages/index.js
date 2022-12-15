@@ -8,8 +8,7 @@ import FirstScreen from "../app/components/FirstScreen";
 import Offer from "../app/components/Offer";
 import PortfolioIntro from "../app/components/PortfolioIntro";
 import PortfolioGallery from "../app/components/PortfolioGallery";
-import LeadersIntro from "../app/components/Leaders/Intro";
-import LeadersGallery from "../app/components/Leaders/Gallery";
+import Leaders from "../app/components/Leaders";
 import Footer from "../app/components/Footer";
 
 const pathMap = {
@@ -27,7 +26,6 @@ export default function Home() {
 
   const [currentPage, setCurrentPage] = useState(0);
   const [nextPage, setNextPage] = useState(0);
-  const [leadersIndex, setLeadersIndex] = useState(0);
 
   const getPathIndex = (value) => {
     return Number(Object.keys(pathMap).find((key) => pathMap[key] === value));
@@ -56,7 +54,7 @@ export default function Home() {
         ref={fullPageRef}
         afterChange={afterChange}
         beforeChange={({ to }) => setNextPage(to)}
-        initialSlide={getPathIndex(router.asPath.split("#")[1])}
+        initialSlide={getPathIndex(router.asPath.split("#")[1]) || 0}
       >
         <Slide className="slide">
           <FirstScreen active={currentPage === 0} changePage={changePage} />
@@ -71,10 +69,7 @@ export default function Home() {
           <PortfolioGallery />
         </Slide>
         <Slide className="slide">
-          <LeadersIntro
-            changePage={changePage}
-            changeIndex={(index) => setLeadersIndex(index)}
-          />
+          <Leaders />
         </Slide>
         <Slide className="slide slide-footer">
           <Footer active={nextPage === 5} />

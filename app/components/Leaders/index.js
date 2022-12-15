@@ -1,14 +1,9 @@
 import styles from "./index.module.scss";
-import items from "../content.json";
+import items from "./content.json";
 
-const LeadersIntro = ({ changePage, changeIndex }) => {
+const Leaders = () => {
   let leadersItems = [];
   for (let i in items) leadersItems.push([i, items[i]]);
-
-  const handleLeaderClick = (index) => {
-    changePage(5);
-    changeIndex(index);
-  };
 
   return (
     <div className={styles.leadersIntro}>
@@ -35,4 +30,4 @@ const LeadersIntro = ({ changePage, changeIndex }) => {
   );
 };
 
-export default LeadersIntro;
+export default Leaders;
