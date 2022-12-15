@@ -5,7 +5,7 @@ export async function getData() {
     const jwt = new google.auth.JWT(
       process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
       null,
-      (process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/gm, "\n"),
+      (process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
       target
     );
 
