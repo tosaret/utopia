@@ -23,11 +23,7 @@ const LeadersIntro = ({ changePage, changeIndex }) => {
 
       <div className={styles.leaders}>
         {leadersItems.map((item, index) => (
-          <div
-            key={index}
-            className={styles.item}
-            onClick={() => handleLeaderClick(index)}
-          >
+          <div key={index} className={styles.item}>
             <img src={item[1].photoUrl} alt="" />
             <div>
               <strong>{`${item[1].firstName} ${item[1].lastName}`}</strong>

@@ -1,6 +1,7 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { FullPage, Slide } from "react-full-page";
 
 import FirstScreen from "../app/components/FirstScreen";
@@ -11,28 +12,36 @@ import LeadersIntro from "../app/components/Leaders/Intro";
 import LeadersGallery from "../app/components/Leaders/Gallery";
 import Footer from "../app/components/Footer";
 
+const pathMap = {
+  0: "",
+  1: "offers",
+  2: "portfolio",
+  3: "portfolio",
+  4: "about-us",
+  5: "contact",
+};
+
 export default function Home() {
+  const router = useRouter();
+  const fullPageRef = useRef();
+
   const [currentPage, setCurrentPage] = useState(0);
   const [nextPage, setNextPage] = useState(0);
   const [leadersIndex, setLeadersIndex] = useState(0);
 
-  const fullPageRef = useRef();
+  const getPathIndex = (value) => {
+    return Number(Object.keys(pathMap).find((key) => pathMap[key] === value));
+  };
 
   const changePage = (index) => {
     fullPageRef.current.scrollToSlide(index);
-    setCurrentPage(index);
   };
 
   const afterChange = ({ to }) => {
     setCurrentPage(to);
-  };
-
-  const beforeChange = ({ to }) => {
-    setNextPage(to);
-  };
-
-  const handleLeadersIndex = (index) => {
-    setLeadersIndex(index);
+    router.push({ pathname: "/", hash: `${pathMap[to]}` }, undefined, {
+      shallow: true,
+    });
   };
 
   return (
@@ -46,8 +55,8 @@ export default function Home() {
       <FullPage
         ref={fullPageRef}
         afterChange={afterChange}
-        beforeChange={beforeChange}
-        //initialSlide={6}
+        beforeChange={({ to }) => setNextPage(to)}
+        initialSlide={getPathIndex(router.asPath.split("#")[1])}
       >
         <Slide className="slide">
           <FirstScreen active={currentPage === 0} changePage={changePage} />
@@ -64,14 +73,11 @@ export default function Home() {
         <Slide className="slide">
           <LeadersIntro
             changePage={changePage}
-            changeIndex={handleLeadersIndex}
+            changeIndex={(index) => setLeadersIndex(index)}
           />
         </Slide>
-        <Slide className="slide">
-          <LeadersGallery initialSlide={leadersIndex} />
-        </Slide>
         <Slide className="slide slide-footer">
-          <Footer active={nextPage === 6} />
+          <Footer active={nextPage === 5} />
         </Slide>
       </FullPage>
     </>
