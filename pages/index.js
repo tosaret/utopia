@@ -87,10 +87,18 @@ export default function Home({ data }) {
           <PortfolioGallery />
         </Slide>
         <Slide className="slide">
-          <Leaders />
+          <Leaders
+            introTexts={data.leadersIntro}
+            content={data.leadersItems}
+            lang={lang}
+          />
         </Slide>
         <Slide className="slide slide-footer">
-          <Footer active={nextPage === 5} />
+          <Footer
+            active={nextPage === 5}
+            content={data.contactTexts}
+            lang={lang}
+          />
         </Slide>
       </FullPage>
     </>

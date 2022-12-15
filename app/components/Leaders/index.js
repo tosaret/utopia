@@ -1,27 +1,25 @@
-import styles from "./index.module.scss";
-import items from "./content.json";
+import ReactHtmlParser from "react-html-parser";
 
-const Leaders = () => {
+import styles from "./index.module.scss";
+
+const Leaders = ({ introTexts, content, lang }) => {
   let leadersItems = [];
-  for (let i in items) leadersItems.push([i, items[i]]);
+  for (let i in content) leadersItems.push([i, content[i]]);
 
   return (
     <div className={styles.leadersIntro}>
-      <h2>Meet our Leaders</h2>
+      <h2>{ReactHtmlParser(introTexts.title[lang])}</h2>
 
       <p className={styles.description}>
-        We are a team of people joined by passion for technology and product
-        creation. We love to create{" "}
-        <strong>high quality, tidy, expandable software</strong> with an
-        <strong> intuitive</strong> and <strong>charming user-layer</strong>.
+        {ReactHtmlParser(introTexts.text[lang])}
       </p>
 
       <div className={styles.leaders}>
         {leadersItems.map((item, index) => (
           <div key={index} className={styles.item}>
-            <img src={item[1].photoUrl} alt="" />
+            <img src={item[1].photoUrl[1]} alt={item[1].name[1]} />
             <div>
-              <strong>{`${item[1].firstName} ${item[1].lastName}`}</strong>
+              <strong>{item[1].name[1]}</strong>
             </div>
           </div>
         ))}

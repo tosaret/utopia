@@ -74,6 +74,37 @@ export async function getData() {
           title: rows[getRowByKey("portfolioIntroTitle")],
           text: rows[getRowByKey("portfolioIntroText")],
         },
+        leadersIntro: {
+          title: rows[getRowByKey("leadersTitle")],
+          text: rows[getRowByKey("leadersText")],
+        },
+        leadersItems: {
+          1: {
+            name: rows[getRowByKey("leaderName1")],
+            photoUrl: rows[getRowByKey("leaderPhoto1")],
+          },
+          2: {
+            name: rows[getRowByKey("leaderName2")],
+            photoUrl: rows[getRowByKey("leaderPhoto2")],
+          },
+          3: {
+            name: rows[getRowByKey("leaderName3")],
+            photoUrl: rows[getRowByKey("leaderPhoto3")],
+          },
+          4: {
+            name: rows[getRowByKey("leaderName4")],
+            photoUrl: rows[getRowByKey("leaderPhoto4")],
+          },
+        },
+        contactTexts: {
+          contactName: rows[getRowByKey("contactName")],
+          contactText: rows[getRowByKey("contactText")],
+          placeholderEmail: rows[getRowByKey("placeholderEmail")],
+          placeholderMessage: rows[getRowByKey("placeholderMessage")],
+          checkboxText: rows[getRowByKey("checkboxText")],
+          formSubmit: rows[getRowByKey("formSubmit")],
+          formSubmitting: rows[getRowByKey("formSubmitting")],
+        },
       };
 
       return data;

@@ -1,3 +1,4 @@
+import ReactHtmlParser from "react-html-parser";
 import Image from "next/image";
 
 import styles from "./index.module.scss";
@@ -7,7 +8,7 @@ import footerLogo from "../../../public/footer-logo.png";
 import ContactForm from "./ContactForm";
 import classNames from "classnames";
 
-const Footer = ({ active }) => {
+const Footer = ({ active, content, lang }) => {
   return (
     <div
       className={classNames(styles.footerWrapper, {
@@ -27,24 +28,16 @@ const Footer = ({ active }) => {
                 />
               </div>
               <div>
-                <strong>Hi I’m Thomas</strong>
+                <strong>{content.contactName[lang]}</strong>
                 <p>COO & Utopia</p>
               </div>
             </div>
             <div>
-              <p>
-                I would love to hear about your ideas and challenges. Together
-                with our team we can figure out how to achieve your business
-                goals and advance your companies development.
-                <br />
-                <br />
-                To get in touch, please use my contact details or the contact
-                form. We're waiting to hear from you!
-              </p>
+              <p>{ReactHtmlParser(content.contactText[lang])}</p>
             </div>
           </div>
           <div className={styles.form}>
-            <ContactForm />
+            <ContactForm content={content} lang={lang} />
           </div>
         </div>
         <div className={styles.bottom}>

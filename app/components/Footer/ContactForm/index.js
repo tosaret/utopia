@@ -3,7 +3,7 @@ import { useForm, ValidationError } from "@formspree/react";
 
 import styles from "./index.module.scss";
 
-const ContactForm = () => {
+const ContactForm = ({ content, lang }) => {
   const [state, handleSubmit] = useForm("xdojqpab");
 
   return (
@@ -13,7 +13,7 @@ const ContactForm = () => {
           id="email"
           type="email"
           name="email"
-          placeholder="Email address"
+          placeholder={content.placeholderEmail[lang]}
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
@@ -21,7 +21,7 @@ const ContactForm = () => {
         <textarea
           id="message"
           name="message"
-          placeholder="Your idea"
+          placeholder={content.placeholderMessage[lang]}
         ></textarea>
         <ValidationError
           prefix="Message"
@@ -32,14 +32,13 @@ const ContactForm = () => {
       <div className={(styles.formItem, styles.formCheckbox)}>
         <label>
           <input type="checkbox" />
-          <span></span>I am consent to processing of my personal data by Utopia
-          Ultimate Software Solutions Sp. z o.o. in the scope provided in the
-          above form in order to reply to my message.*
+          <span></span>
+          {content.checkboxText[lang]}*
         </label>
       </div>
       <button type="submit" disabled={state.submitting}>
-        {state.submitting && "Submitting..."}
-        {!state.submitting && "Submit"}
+        {state.submitting && content.formSubmitting[lang]}
+        {!state.submitting && content.formSubmit[lang]}
       </button>
       <ValidationError errors={state.errors} />
     </form>
