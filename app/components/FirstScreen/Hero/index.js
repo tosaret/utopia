@@ -1,3 +1,4 @@
+import ReactHtmlParser from "react-html-parser";
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
@@ -5,7 +6,7 @@ import classNames from "classnames";
 import HeroImageSrc from "../../../../public/hero-mobile.png";
 import styles from "./index.module.scss";
 
-const Hero = ({ animate, changePage }) => {
+const Hero = ({ animate, changePage, lang, content }) => {
   return (
     <>
       <div className={styles.hero}>
@@ -24,11 +25,11 @@ const Hero = ({ animate, changePage }) => {
             <span className="fadeIn">&#9679;</span>
           </h1>
           <h2 className={classNames({ typing: animate })}>
-            design your perfect <strong>world</strong>
+            {ReactHtmlParser(content.slogan[lang])}
           </h2>
           <div className={styles.readMore}>
             <Link href="" onClick={() => changePage(1)}>
-              read <span>more</span>
+              {ReactHtmlParser(content.readMore[lang])}
             </Link>
           </div>
         </div>

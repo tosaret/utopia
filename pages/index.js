@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FullPage, Slide } from "react-full-page";
+import { getData } from "../libs/data";
 
 import FirstScreen from "../app/components/FirstScreen";
 import Offer from "../app/components/Offer";
@@ -20,10 +21,11 @@ const pathMap = {
   5: "contact",
 };
 
-export default function Home() {
+export default function Home({ data }) {
   const router = useRouter();
   const fullPageRef = useRef();
 
+  const [lang, setLang] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [nextPage, setNextPage] = useState(0);
 
@@ -57,7 +59,14 @@ export default function Home() {
         initialSlide={getPathIndex(router.asPath.split("#")[1]) || 0}
       >
         <Slide className="slide">
-          <FirstScreen active={currentPage === 0} changePage={changePage} />
+          <FirstScreen
+            active={currentPage === 0}
+            changePage={changePage}
+            menuTexts={data.menu}
+            heroTexts={data.hero}
+            lang={lang}
+            setLang={setLang}
+          />
         </Slide>
         <Slide className="slide">
           <Offer active={nextPage === 1} />
@@ -77,4 +86,14 @@ export default function Home() {
       </FullPage>
     </>
   );
+}
+
+export async function getStaticProps(context) {
+  const data = await getData();
+  return {
+    props: {
+      data: data,
+    },
+    revalidate: 1,
+  };
 }
