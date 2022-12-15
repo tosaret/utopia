@@ -60,7 +60,7 @@ export default function Home() {
           <FirstScreen active={currentPage === 0} changePage={changePage} />
         </Slide>
         <Slide className="slide">
-          <Offer active={currentPage === 1} />
+          <Offer active={nextPage === 1} />
         </Slide>
         <Slide className="slide">
           <PortfolioIntro changePage={changePage} />
