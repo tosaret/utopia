@@ -110,48 +110,60 @@ const Offer = ({ active, menuTexts, content, lang }) => {
           })}
         >
           <div className={classNames(styles.menu, { fadeIn: active })}>
-            <a
-              href="#"
-              className={classNames({ [styles.active]: activeTab === 1 })}
-              onClick={() => changeOffer(event, 1)}
-            >
-              {menuTexts["web"][lang]}
-            </a>
-            <a
-              href="#"
-              className={classNames({ [styles.active]: activeTab === 2 })}
-              onClick={() => changeOffer(event, 2)}
-            >
-              {menuTexts["mobile"][lang]}
-            </a>
-            <a
-              href="#"
-              className={classNames({ [styles.active]: activeTab === 3 })}
-              onClick={() => changeOffer(event, 3)}
-            >
-              {menuTexts["consulting"][lang]}
-            </a>
-            <a
-              href="#"
-              className={classNames({ [styles.active]: activeTab === 4 })}
-              onClick={() => changeOffer(event, 4)}
-            >
-              {menuTexts["services"][lang]}
-            </a>
-            <a
-              href="#"
-              className={classNames({ [styles.active]: activeTab === 5 })}
-              onClick={() => changeOffer(event, 5)}
-            >
-              {menuTexts["cloud"][lang]}
-            </a>
-            <a
-              href="#"
-              className={classNames({ [styles.active]: activeTab === 6 })}
-              onClick={() => changeOffer(event, 6)}
-            >
-              {menuTexts["design"][lang]}
-            </a>
+            <div>
+              <a
+                href="#"
+                className={classNames({ [styles.active]: activeTab === 1 })}
+                onClick={() => changeOffer(event, 1)}
+              >
+                {menuTexts["web"][lang]}
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className={classNames({ [styles.active]: activeTab === 2 })}
+                onClick={() => changeOffer(event, 2)}
+              >
+                {menuTexts["mobile"][lang]}
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className={classNames({ [styles.active]: activeTab === 3 })}
+                onClick={() => changeOffer(event, 3)}
+              >
+                {menuTexts["consulting"][lang]}
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className={classNames({ [styles.active]: activeTab === 4 })}
+                onClick={() => changeOffer(event, 4)}
+              >
+                {menuTexts["services"][lang]}
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className={classNames({ [styles.active]: activeTab === 5 })}
+                onClick={() => changeOffer(event, 5)}
+              >
+                {menuTexts["cloud"][lang]}
+              </a>
+            </div>
+            <div>
+              <a
+                href="#"
+                className={classNames({ [styles.active]: activeTab === 6 })}
+                onClick={() => changeOffer(event, 6)}
+              >
+                {menuTexts["design"][lang]}
+              </a>
+            </div>
           </div>
         </div>
       </div>
