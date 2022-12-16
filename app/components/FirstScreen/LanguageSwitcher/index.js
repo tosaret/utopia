@@ -2,13 +2,8 @@ import Link from "next/link";
 import { useState } from "react";
 import styles from "./index.module.scss";
 
-const LanguageSwitcher = ({ lang, setLang }) => {
+const LanguageSwitcher = ({ lang }) => {
   const [showLangDropdown, setShowLangDropdown] = useState(false);
-
-  const handleLangChange = (id) => {
-    setLang(id);
-    setShowLangDropdown(false);
-  };
 
   return (
     <div className={styles.langSwitcher}>
@@ -17,15 +12,9 @@ const LanguageSwitcher = ({ lang, setLang }) => {
       </a>
       {showLangDropdown && (
         <div className={styles.dropdown}>
-          <Link href="" onClick={() => handleLangChange(1)}>
-            EN
-          </Link>
-          <Link href="" onClick={() => handleLangChange(2)}>
-            PL
-          </Link>
-          <Link href="" onClick={() => handleLangChange(3)}>
-            DE
-          </Link>
+          <Link href="/">EN</Link>
+          <Link href="/pl">PL</Link>
+          <Link href="/de">DE</Link>
         </div>
       )}
     </div>

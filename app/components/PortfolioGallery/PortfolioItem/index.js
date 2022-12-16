@@ -48,7 +48,6 @@ const PortfolioItem = ({
               {title[lang]}
             </div>
             <div>
-              {console.log(convertedTags)}
               {convertedTags.map((tag, index) => (
                 <span
                   key={index}

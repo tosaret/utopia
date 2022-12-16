@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -25,7 +25,7 @@ export default function Home({ data }) {
   const router = useRouter();
   const fullPageRef = useRef();
 
-  const [lang, setLang] = useState(1);
+  const [lang, setLang] = useState(3);
   const [currentPage, setCurrentPage] = useState(0);
   const [nextPage, setNextPage] = useState(0);
 
@@ -39,7 +39,7 @@ export default function Home({ data }) {
 
   const afterChange = ({ to }) => {
     setCurrentPage(to);
-    router.push({ pathname: "/", hash: `${pathMap[to]}` }, undefined, {
+    router.push({ pathname: "/de", hash: `${pathMap[to]}` }, undefined, {
       shallow: true,
     });
   };
@@ -49,8 +49,8 @@ export default function Home({ data }) {
       <div>
         <Head>
           <title>
-            Utopia Ultimate - Mobile App, Web App &amp; Cross-platform
-            Development
+            Utopia Ultimate - Mobile, Web &amp; plattformübergreifende
+            Entwicklung
           </title>
         </Head>
       </div>
