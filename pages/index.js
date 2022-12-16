@@ -84,7 +84,7 @@ export default function Home({ data }) {
           />
         </Slide>
         <Slide className="slide">
-          <PortfolioGallery />
+          <PortfolioGallery content={data.portfolioItems} lang={lang} />
         </Slide>
         <Slide className="slide">
           <Leaders

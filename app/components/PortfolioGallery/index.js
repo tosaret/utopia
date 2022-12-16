@@ -7,18 +7,18 @@ import "swiper/css/pagination";
 import classNames from "classnames";
 import PortfolioItem from "./PortfolioItem";
 
-import items from "./content.json";
+//import items from "./content.json";
 
 import styles from "./index.module.scss";
 
-const PortfolioGallery = () => {
+const PortfolioGallery = ({ content, lang }) => {
   const [activeSlide, setActiveSlide] = useState(1);
   const [animateIn, setAnimateIn] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
   const [moveDirection, setMoveDirection] = useState("");
 
   let portfolioItems = [];
-  for (let i in items) portfolioItems.push([i, items[i]]);
+  for (let i in content) portfolioItems.push([i, content[i]]);
 
   const handleStartTransition = () => {
     setAnimateIn(false);
@@ -53,6 +53,7 @@ const PortfolioGallery = () => {
             {({ isActive, isPrev, isNext }) => (
               <PortfolioItem
                 item={item}
+                lang={lang}
                 animateIn={animateIn}
                 animateOut={animateOut}
                 isActive={isActive}

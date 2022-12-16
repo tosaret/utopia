@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 
 const PortfolioItem = ({
   item,
+  lang,
   animateOut,
   animateIn,
   isActive,
@@ -26,6 +27,7 @@ const PortfolioItem = ({
 
   let itemTags = [];
   for (let i in tags) itemTags.push([tags[i]]);
+  const convertedTags = itemTags[1][0].split(", ");
 
   return (
     <div
@@ -36,20 +38,21 @@ const PortfolioItem = ({
     >
       <div
         className={styles.upperBackground}
-        style={{ backgroundImage: `url(${backgroundImage})` }}
+        style={{ backgroundImage: `url(${backgroundImage[1]})` }}
       />
       <div className={styles.portfolioContainer}>
         <div className={styles.info}>
           <div className={styles.titleContainer}>
             <div className={styles.title}>
-              <img src={logoUrl} width={46} height={46} alt="" />
-              {title}
+              <img src={logoUrl[1]} width={46} height={46} alt="" />
+              {title[lang]}
             </div>
             <div>
-              {itemTags.map((tag, index) => (
+              {console.log(convertedTags)}
+              {convertedTags.map((tag, index) => (
                 <span
                   key={index}
-                  style={{ backgroundColor: tagsColor }}
+                  style={{ backgroundColor: tagsColor[1] }}
                   className={styles.label}
                 >
                   {tag}
@@ -58,22 +61,22 @@ const PortfolioItem = ({
             </div>
           </div>
           <div className={styles.imageMobile}>
-            <img src={imageUrl} alt="" />
+            <img src={imageUrl[1]} alt="" />
           </div>
           <div className={styles.descriptionContainer}>
-            <p className={styles.description}>{description}</p>
+            <p className={styles.description}>{description[lang]}</p>
           </div>
         </div>
         <div className={styles.image}>
-          <img src={imageUrl} alt="" />
+          <img src={imageUrl[1]} alt="" />
         </div>
       </div>
       <div className={styles.portfolioBottomWrapper}>
         <div
-          style={{ background: backgroundGradient }}
+          style={{ background: backgroundGradient[1] }}
           className={styles.portfolioBottomBg}
         >
-          {moveDirection === "prev" && (
+          {/* {moveDirection === "prev" && (
             <div
               style={{ backgroundColor: prevBgColor }}
               className={styles.bgLeft}
@@ -84,7 +87,7 @@ const PortfolioItem = ({
               style={{ backgroundColor: nextBgColor }}
               className={styles.bgRight}
             ></div>
-          )}
+          )} */}
         </div>
       </div>
     </div>
