@@ -32,6 +32,9 @@ const PortfolioItem = ({
   return (
     <div
       className={classNames(styles.portfolioGallery, {
+        [styles.initial]: !moveDirection,
+        [styles.moveNext]: moveDirection === "next",
+        [styles.movePrev]: moveDirection === "prev",
         [styles.animateOut]: animateOut && (isPrev || isNext),
         [styles.animateIn]: animateIn && isActive,
       })}
@@ -74,20 +77,7 @@ const PortfolioItem = ({
         <div
           style={{ background: backgroundGradient[1] }}
           className={styles.portfolioBottomBg}
-        >
-          {/* {moveDirection === "prev" && (
-            <div
-              style={{ backgroundColor: prevBgColor }}
-              className={styles.bgLeft}
-            ></div>
-          )}
-          {moveDirection === "next" && (
-            <div
-              style={{ backgroundColor: nextBgColor }}
-              className={styles.bgRight}
-            ></div>
-          )} */}
-        </div>
+        ></div>
       </div>
     </div>
   );

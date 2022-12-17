@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { EffectFade, Pagination } from "swiper";
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 
 import classNames from "classnames";
 import PortfolioItem from "./PortfolioItem";
-
-//import items from "./content.json";
 
 import styles from "./index.module.scss";
 
@@ -27,7 +26,6 @@ const PortfolioGallery = ({ content, lang }) => {
     setTimeout(() => {
       setAnimateOut(false);
       setAnimateIn(true);
-      setMoveDirection("");
     }, 500);
   };
 
@@ -38,11 +36,12 @@ const PortfolioGallery = ({ content, lang }) => {
   return (
     <div className={styles.portfolio}>
       <Swiper
-        modules={[Pagination]}
+        modules={[EffectFade, Pagination]}
         pagination={{ clickable: false }}
         preventInteractionOnTransition={true}
         loop={true}
-        speed={800}
+        effect={"fade"}
+        speed={500}
         longSwipesMs={30000}
         longSwipesRatio={0.1}
         onTransitionStart={() => handleStartTransition()}

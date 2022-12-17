@@ -17,7 +17,6 @@
     height: 50%;
     width: 100%;
     top: 0;
-    opacity: 0;
   }
 
   .portfolioContainer {
@@ -62,33 +61,6 @@
     width: 100%;
     height: 50vh;
     overflow: hidden;
-
-    .bgRight {
-      border-width: 10px;
-      content: "";
-      position: absolute;
-      border-radius: 0.5em 0.5em 5.563em 5.563em;
-      width: 50%;
-      height: 200%;
-      bottom: -50%;
-      right: -47%;
-      background-color: #36d8c5;
-      border-radius: 35%;
-      animation: drift 3000ms infinite cubic-bezier(0.5, 0.7, 0.7, 0.5);
-    }
-    .bgLeft {
-      border-width: 10px;
-      content: "";
-      position: absolute;
-      border-radius: 0.5em 0.5em 5.563em 5.563em;
-      width: 50%;
-      height: 200%;
-      bottom: -50%;
-      left: -47%;
-      background-color: #36d8c5;
-      border-radius: 35%;
-      animation: drift 3000ms infinite cubic-bezier(0.5, 0.7, 0.7, 0.5);
-    }
   }
 }
 
@@ -148,7 +120,6 @@
   line-height: 46px;
   max-width: 470px;
   position: relative;
-  left: 0;
   opacity: 0;
 }
 
@@ -166,98 +137,100 @@
   }
 }
 
-.animateOut {
-  .upperBackground {
-    animation: fadeOut 200ms forwards linear;
-  }
-  .image {
-    animation: fadeUpOut 300ms forwards linear;
-  }
+.initial {
   .title,
-  .label {
-    animation: fadeUpOut 900ms forwards linear;
-  }
+  .image,
+  .label,
   .description {
-    animation: fadeOutBottom 900ms forwards linear;
-  }
-}
-
-.animateIn {
-  .upperBackground {
-    animation: fadeIn 700ms forwards linear;
-  }
-  .image {
-    animation: fadeIn 800ms forwards linear;
-  }
-  .title,
-  .label {
-    animation: fadeIn 500ms forwards linear;
-  }
-  .description {
-    animation: fadeIn 900ms forwards linear;
-  }
-}
-
-@keyframes wobble {
-  0% {
-    border-radius: 0px 30px 130px 0px / 0px 80px 250px 0px;
-  }
-  50% {
-    border-radius: 0px 130px 30px 0px / 0px 250px 80px 0px;
-  }
-  100% {
-    border-radius: 0px 30px 130px 0px / 0px 80px 250px 0px;
-  }
-}
-
-@keyframes fadeOutBottom {
-  0% {
-    bottom: 0;
     opacity: 1;
   }
-  100% {
-    bottom: -200px;
-    opacity: 0;
+}
+
+.moveNext.animateOut {
+  .image {
+    animation: fadeOutLeft 200ms forwards ease-out;
+  }
+  .title,
+  .label,
+  .description {
+    animation: fadeOutLeft 200ms forwards ease-out;
   }
 }
 
-@keyframes scrollLeft {
+.movePrev.animateOut {
+  .image {
+    animation: fadeOutRight 200ms forwards ease-out;
+  }
+  .title,
+  .label,
+  .description {
+    animation: fadeOutRight 200ms forwards ease-out;
+  }
+}
+
+.moveNext.animateIn {
+  .image {
+    animation: fadeInRight 400ms forwards ease-in;
+  }
+  .title,
+  .label,
+  .description {
+    animation: fadeInRight 400ms forwards ease-in;
+  }
+}
+
+.movePrev.animateIn {
+  .image {
+    animation: fadeInLeft 400ms forwards ease-in;
+  }
+  .title,
+  .label,
+  .description {
+    animation: fadeInLeft 400ms forwards ease-in;
+  }
+}
+
+@keyframes fadeOutLeft {
   0% {
     left: 0;
-  }
-  100% {
-    left: -1000px;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
     opacity: 1;
   }
   100% {
+    left: -400px;
     opacity: 0;
   }
 }
 
-@keyframes fadeUpOut {
+@keyframes fadeOutRight {
   0% {
-    top: 0;
-    transform: scale(1);
+    right: 0;
     opacity: 1;
   }
   100% {
-    top: -100vh;
+    right: -400px;
     opacity: 0;
-    transform: scale(0.6);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    left: -400px;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    right: -400px;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
   }
 }
 
