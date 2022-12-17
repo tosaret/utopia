@@ -117,18 +117,19 @@
     transition: all 0.2s ease 0s;
     transform: rotate(0deg);
     border-radius: 50%;
-    animation: spin 2s linear infinite;
+    animation: spin 5s linear infinite;
 
     &.circleIn {
-      animation: spin 2s linear infinite, circleMoveIn 600ms forwards linear;
+      animation: spin 5s linear infinite, circleMoveIn 600ms forwards linear;
     }
 
     &.circleOut {
-      animation: spin 2s linear infinite, circleMoveOut 600ms forwards linear;
+      animation: spin 5s linear infinite, circleMoveOut 600ms forwards linear;
     }
 
     &:hover {
-      animation: spin 2s linear infinite, morph 1s linear infinite;
+      cursor: pointer;
+      animation: spin 5s linear infinite, morph 7s linear infinite;
     }
   }
 }
@@ -138,13 +139,13 @@
     left: -560px;
   }
   to {
-    left: -500px;
+    left: -520px;
   }
 }
 
 @keyframes circleMoveOut {
   from {
-    left: -500px;
+    left: -520px;
   }
   to {
     left: -560px;
