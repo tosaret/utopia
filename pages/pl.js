@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -11,6 +11,7 @@ import PortfolioIntro from "../app/components/PortfolioIntro";
 import PortfolioGallery from "../app/components/PortfolioGallery";
 import Leaders from "../app/components/Leaders";
 import Footer from "../app/components/Footer";
+import classNames from "classnames";
 
 const pathMap = {
   0: "",
@@ -54,12 +55,17 @@ export default function Home({ data }) {
         </Head>
       </div>
       <FullPage
+        duration={700}
         ref={fullPageRef}
         afterChange={afterChange}
         beforeChange={({ to }) => setNextPage(to)}
         initialSlide={getPathIndex(router.asPath.split("#")[1]) || 0}
       >
-        <Slide className="slide">
+        <Slide
+          className={classNames("slide", {
+            active: nextPage === 0,
+          })}
+        >
           <FirstScreen
             active={currentPage === 0}
             changePage={changePage}
@@ -69,7 +75,11 @@ export default function Home({ data }) {
             setLang={setLang}
           />
         </Slide>
-        <Slide className="slide">
+        <Slide
+          className={classNames("slide", {
+            active: nextPage === 1,
+          })}
+        >
           <Offer
             active={nextPage === 1}
             menuTexts={data.offersMenu}
@@ -77,24 +87,40 @@ export default function Home({ data }) {
             lang={lang}
           />
         </Slide>
-        <Slide className="slide">
+        <Slide
+          className={classNames("slide", {
+            active: nextPage === 2,
+          })}
+        >
           <PortfolioIntro
             changePage={changePage}
             content={data.portfolioIntro}
             lang={lang}
           />
         </Slide>
-        <Slide className="slide">
+        <Slide
+          className={classNames("slide", {
+            active: nextPage === 3,
+          })}
+        >
           <PortfolioGallery content={data.portfolioItems} lang={lang} />
         </Slide>
-        <Slide className="slide">
+        <Slide
+          className={classNames("slide", {
+            active: nextPage === 4,
+          })}
+        >
           <Leaders
             introTexts={data.leadersIntro}
             content={data.leadersItems}
             lang={lang}
           />
         </Slide>
-        <Slide className="slide slide-footer">
+        <Slide
+          className={classNames("slide slide-footer", {
+            active: nextPage === 5,
+          })}
+        >
           <Footer
             active={nextPage === 5}
             content={data.contactTexts}
