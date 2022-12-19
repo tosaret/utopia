@@ -12,6 +12,7 @@ import PortfolioGallery from "../app/components/PortfolioGallery";
 import Leaders from "../app/components/Leaders";
 import Footer from "../app/components/Footer";
 import classNames from "classnames";
+import BurgerMenu from "../app/components/BurgerMenu";
 
 const pathMap = {
   0: "",
@@ -54,6 +55,12 @@ export default function Home({ data }) {
           </title>
         </Head>
       </div>
+      <BurgerMenu
+        changePage={changePage}
+        content={data.menu}
+        lang={lang}
+        firstScreen={nextPage === 0}
+      />
       <FullPage
         duration={700}
         ref={fullPageRef}

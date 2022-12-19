@@ -1,0 +1,106 @@
+.menuToggle {
+  position: fixed;
+  top: 5vh;
+  right: 4vw;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 9999;
+  padding-top: 10px;
+
+  & > span,
+  & > span::before,
+  & > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+      0deg,
+      rgba(13, 9, 9, 0.88),
+      rgba(13, 9, 9, 0.88)
+    );
+    transition-duration: 0.25s;
+    border-radius: 2px;
+  }
+
+  & > span::before {
+    content: "";
+    top: -7px;
+  }
+
+  & > span::after {
+    content: "";
+    top: 7px;
+  }
+
+  &.menuToggleOpen {
+    & > span {
+      transform: rotate(45deg);
+      background: #e9e9e9;
+    }
+    & > span::before {
+      top: 0;
+      transform: rotate(0deg);
+      background: #e9e9e9;
+    }
+    & > span::after {
+      top: 0;
+      transform: rotate(90deg);
+      background: #e9e9e9;
+    }
+  }
+
+  &.firstScreen {
+    & > span,
+    & > span::before,
+    & > span::after {
+      background: #e9e9e9;
+    }
+  }
+}
+
+.overlayMenu {
+  position: fixed;
+  z-index: 9998;
+  background: linear-gradient(0deg, rgba(13, 9, 9, 0.88), rgba(13, 9, 9, 0.88));
+  backdrop-filter: blur(10px);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  display: none;
+
+  &.show {
+    display: flex;
+  }
+
+  a {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 70px;
+    color: #e9e9e9;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: 1000px) {
+  .menuToggle {
+    &.firstScreen {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 999px) {
+  .overlayMenu {
+    a {
+      font-size: 26px;
+    }
+  }
+}
