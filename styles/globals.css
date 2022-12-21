@@ -61,7 +61,7 @@ a {
 }
 
 .slide {
-  height: 100vh !important;
+  height: -webkit-fill-available !important;
   overflow: hidden;
   opacity: 0;
   transition: opacity 400ms ease-in;
