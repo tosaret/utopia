@@ -54,6 +54,10 @@ export default function Home({ data }) {
             Utopia Ultimate - Mobile App, Web App &amp; Cross-platform
             Development
           </title>
+          <meta
+            name="viewport"
+            content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes"
+          />
         </Head>
       </div>
       <BurgerMenu
