@@ -236,9 +236,21 @@
 
 @media (max-width: 999px) {
   .portfolioGallery {
+    height: 100vh;
+    align-items: flex-start;
+
     .portfolioContainer {
+      height: 100%;
+
+      .titleContainer,
       .descriptionContainer {
         padding: 0;
+        height: auto;
+      }
+
+      .descriptionContainer {
+        height: 100%;
+        max-height: 200px;
       }
     }
     .portfolioBottomBg {
@@ -253,6 +265,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     .title {
       font-size: 32px;
@@ -275,8 +288,8 @@
 
     .description {
       padding: 0 20px 0 0;
-      font-size: 18px;
-      line-height: 36px;
+      font-size: 16px;
+      line-height: 28px;
     }
   }
   .image {

@@ -101,6 +101,9 @@
 }
 
 @media (max-width: 999px) {
+  .menuToggle {
+    right: 7vw;
+  }
   .overlayMenu {
     a {
       font-size: 26px;

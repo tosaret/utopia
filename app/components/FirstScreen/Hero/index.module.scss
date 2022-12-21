@@ -88,13 +88,14 @@
 
 @media (max-width: 999px) {
   .hero {
-    min-height: 100vh;
-    height: auto;
+    height: 100vh;
     flex-direction: column-reverse;
+    gap: 0;
 
     .text {
       width: 90%;
-      padding-top: 90px;
+      height: 100%;
+      padding-top: 20vh;
 
       h1 {
         font-size: 48px;
@@ -128,7 +129,7 @@
         animation: none;
         opacity: 1;
         top: unset;
-        bottom: -11vh;
+        bottom: 0;
       }
     }
 

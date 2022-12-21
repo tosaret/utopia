@@ -106,22 +106,43 @@
       .textBlock,
       .form {
         width: 100%;
+        font-size: 13px;
       }
-    }
-    .bottom {
-      flex-direction: column;
-      gap: 24px;
-      padding-bottom: 32px;
 
-      > div {
-        width: 100%;
-        text-align: left !important;
-      }
-      .footerLogo {
-        img {
-          margin: 0;
+      .textBlock {
+        .thomas {
+          margin: 0 0 10px;
+          img {
+            width: 60px;
+            height: 60px;
+          }
+          strong {
+            margin: 5px 0;
+            font-size: 15px;
+          }
+          p {
+            font-size: 15px;
+          }
         }
       }
     }
+    .bottom {
+      display: none;
+    }
+    // .bottom {
+    //   flex-direction: column;
+    //   gap: 24px;
+    //   padding-bottom: 32px;
+
+    //   > div {
+    //     width: 100%;
+    //     text-align: left !important;
+    //   }
+    //   .footerLogo {
+    //     img {
+    //       margin: 0;
+    //     }
+    //   }
+    // }
   }
 }
