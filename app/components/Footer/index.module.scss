@@ -101,12 +101,23 @@
     .top {
       flex-direction: column;
       gap: 20px;
-      padding-top: 50px;
+      padding-top: 20px;
 
       .textBlock,
       .form {
         width: 100%;
         font-size: 13px;
+      }
+
+      .textBlock {
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      .form {
+        textarea {
+          height: 80px;
+        }
       }
 
       .textBlock {
