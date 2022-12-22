@@ -8,14 +8,6 @@
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 
-  cursor: url("../../../../public/portfolio-cursor.svg") 60 35, pointer;
-  cursor: -webkit-image-set(
-        url("../../../../public/portfolio-cursor.png") 1x,
-        url("../../../../public/portfolio-cursor@2x.png") 2x
-      )
-      60 35,
-    pointer; /* Webkit */
-
   .portfolioContainer {
     width: 100%;
     max-width: 1200px;

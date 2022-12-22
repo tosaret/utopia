@@ -101,6 +101,7 @@ export default function Home({ data }) {
           })}
         >
           <PortfolioIntro
+            active={nextPage === 2}
             changePage={changePage}
             content={data.portfolioIntro}
             lang={lang}
@@ -111,7 +112,11 @@ export default function Home({ data }) {
             active: nextPage === 3,
           })}
         >
-          <PortfolioGallery content={data.portfolioItems} lang={lang} />
+          <PortfolioGallery
+            active={nextPage === 3}
+            content={data.portfolioItems}
+            lang={lang}
+          />
         </Slide>
         <Slide
           className={classNames("slide", {

@@ -4,10 +4,10 @@ import Link from "next/link";
 import PlayIcon from "../../../public/play-icon.svg";
 import styles from "./index.module.scss";
 
-const PortfolioIntro = ({ changePage, content, lang }) => {
+const PortfolioIntro = ({ active, changePage, content, lang }) => {
   return (
     <section className={styles.portfolioIntro}>
-      <div className={styles.background} />
+      {active && <div className={styles.background} />}
       <div className={styles.intro}>
         <h2>{ReactHtmlParser(content.title[lang])}</h2>
         <p>{ReactHtmlParser(content.text[lang])}</p>

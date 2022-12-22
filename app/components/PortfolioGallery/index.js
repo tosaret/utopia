@@ -9,7 +9,7 @@ import PortfolioItem from "./PortfolioItem";
 
 import styles from "./index.module.scss";
 
-const PortfolioGallery = ({ content, lang }) => {
+const PortfolioGallery = ({ active, content, lang }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [animateIn, setAnimateIn] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
@@ -34,15 +34,17 @@ const PortfolioGallery = ({ content, lang }) => {
 
   return (
     <div className={styles.portfolio}>
-      <div
-        className={classNames(styles.upperBackground, {
-          [styles.animateIn]: animateIn,
-          [styles.animateOut]: animateOut,
-        })}
-        style={{
-          backgroundImage: `url(${portfolioItems[activeSlide][1].backgroundImage[1]})`,
-        }}
-      />
+      {active && (
+        <div
+          className={classNames(styles.upperBackground, {
+            [styles.animateIn]: animateIn,
+            [styles.animateOut]: animateOut,
+          })}
+          style={{
+            backgroundImage: `url(${portfolioItems[activeSlide][1].backgroundImage[1]})`,
+          }}
+        />
+      )}
       <Swiper
         modules={[Pagination]}
         pagination={{ clickable: false }}
@@ -72,15 +74,18 @@ const PortfolioGallery = ({ content, lang }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div
-        className={classNames(styles.portfolioBottomBg, {
-          [styles.animateIn]: animateIn,
-          [styles.animateOut]: animateOut,
-        })}
-        style={{
-          backgroundImage: portfolioItems[activeSlide][1].backgroundGradient[1],
-        }}
-      ></div>
+      {active && (
+        <div
+          className={classNames(styles.portfolioBottomBg, {
+            [styles.animateIn]: animateIn,
+            [styles.animateOut]: animateOut,
+          })}
+          style={{
+            backgroundImage:
+              portfolioItems[activeSlide][1].backgroundGradient[1],
+          }}
+        ></div>
+      )}
     </div>
   );
 };
