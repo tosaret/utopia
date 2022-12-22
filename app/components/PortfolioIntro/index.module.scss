@@ -1,7 +1,12 @@
 .background {
   background: url(../../../public/portfolio-intro-bg.svg) center no-repeat;
   background-size: cover;
-  position: absolute;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -50%;
+
   width: 100vw;
   height: 100vw;
   animation: spin 400s infinite linear;
