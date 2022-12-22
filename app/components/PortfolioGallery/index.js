@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Pagination } from "swiper";
 import "swiper/css";
-import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 
 import classNames from "classnames";
@@ -11,7 +10,7 @@ import PortfolioItem from "./PortfolioItem";
 import styles from "./index.module.scss";
 
 const PortfolioGallery = ({ content, lang }) => {
-  const [activeSlide, setActiveSlide] = useState(1);
+  const [activeSlide, setActiveSlide] = useState(0);
   const [animateIn, setAnimateIn] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
   const [moveDirection, setMoveDirection] = useState("");
@@ -19,7 +18,7 @@ const PortfolioGallery = ({ content, lang }) => {
   let portfolioItems = [];
   for (let i in content) portfolioItems.push([i, content[i]]);
 
-  const handleStartTransition = () => {
+  const handleStartTransition = (swiper) => {
     setAnimateIn(false);
     setAnimateOut(true);
 
@@ -35,16 +34,25 @@ const PortfolioGallery = ({ content, lang }) => {
 
   return (
     <div className={styles.portfolio}>
+      <div
+        className={classNames(styles.upperBackground, {
+          [styles.animateIn]: animateIn,
+          [styles.animateOut]: animateOut,
+        })}
+        style={{
+          backgroundImage: `url(${portfolioItems[activeSlide][1].backgroundImage[1]})`,
+        }}
+      />
       <Swiper
-        modules={[EffectFade, Pagination]}
+        modules={[Pagination]}
         pagination={{ clickable: false }}
         preventInteractionOnTransition={true}
         loop={true}
-        effect={"fade"}
         speed={500}
         longSwipesMs={30000}
         longSwipesRatio={0.1}
-        onTransitionStart={() => handleStartTransition()}
+        onTransitionStart={(swiper) => handleStartTransition(swiper)}
+        onTransitionEnd={(swiper) => setActiveSlide(swiper.realIndex)}
         onSetTranslate={(swiper) => handleDrag(swiper)}
       >
         {portfolioItems.map((item, index) => (
@@ -64,6 +72,15 @@ const PortfolioGallery = ({ content, lang }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div
+        className={classNames(styles.portfolioBottomBg, {
+          [styles.animateIn]: animateIn,
+          [styles.animateOut]: animateOut,
+        })}
+        style={{
+          backgroundImage: portfolioItems[activeSlide][1].backgroundGradient[1],
+        }}
+      ></div>
     </div>
   );
 };
