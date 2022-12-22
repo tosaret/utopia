@@ -66,12 +66,34 @@ a {
   opacity: 0;
   transition: opacity 400ms ease-in;
 }
+.slide p,
+.slide strong,
+.slide h2,
+.slide span {
+  transform: translateY(-30px);
+  opacity: 0.7;
+  transition: all 900ms ease-in;
+}
 .slide.active {
   opacity: 1;
+}
+.slide.active p,
+.slide.active strong,
+.slide.active h2,
+.slide.active span {
+  opacity: 1;
+  transform: translateY(0);
 }
 .slide-footer {
   height: auto !important;
   overflow: visible;
+}
+.slide-footer p,
+.slide-footer strong,
+.slide-footer h2,
+.slide-footer span {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* SWIPER STYLES */

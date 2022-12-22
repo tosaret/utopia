@@ -42,10 +42,10 @@ const PortfolioItem = ({
         <div className={styles.portfolioContainer}>
           <div className={styles.info}>
             <div className={styles.titleContainer}>
-              <div className={styles.title}>
+              <h2 className={styles.title}>
                 <img src={logoUrl[1]} width={46} height={46} alt="" />
                 {title[lang]}
-              </div>
+              </h2>
               <div>
                 {convertedTags.map((tag, index) => (
                   <span
