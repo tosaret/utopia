@@ -19,7 +19,7 @@ const BurgerMenu = ({ changePage, content, lang, firstScreen }) => {
           [styles.firstScreen]: firstScreen,
           [styles.menuToggleOpen]: menuDropdown,
         })}
-        onClick={() => setMenuDropdown(!menuDropdown)}
+        onClick={() => setMenuDropdown((prev) => !prev)}
       >
         <span></span>
       </div>

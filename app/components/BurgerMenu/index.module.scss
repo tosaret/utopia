@@ -76,7 +76,7 @@
   height: 0;
   overflow: hidden;
   opacity: 0;
-  transition: opacity 200ms ease-in-out;
+  transition: opacity 400ms ease-in-out;
 
   &.show {
     height: 100vh;
