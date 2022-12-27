@@ -97,11 +97,11 @@ a {
 }
 
 /* SWIPER STYLES */
-.swiper-wrapper {
+.slide .swiper-wrapper {
   transition-timing-function: ease-in-out;
 }
 
-.swiper-pagination .swiper-pagination-bullet {
+.slide .swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
   margin: 12px !important;
@@ -110,6 +110,6 @@ a {
   transition: all 400ms ease-in;
 }
 
-.swiper-pagination .swiper-pagination-bullet-active {
+.slide .swiper-pagination .swiper-pagination-bullet-active {
   opacity: 1;
 }
