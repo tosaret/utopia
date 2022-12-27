@@ -63,19 +63,13 @@ a {
 .slide {
   height: 100% !important;
   overflow: hidden;
-  opacity: 0;
-  transition: opacity 400ms ease-in;
 }
 .slide p,
 .slide strong,
 .slide h2,
 .slide span {
-  transform: translateY(-30px);
-  opacity: 0.7;
+  transform: translateY(-40px);
   transition: all 900ms ease-in;
-}
-.slide.active {
-  opacity: 1;
 }
 .slide.active p,
 .slide.active strong,
