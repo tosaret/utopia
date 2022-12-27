@@ -43,8 +43,8 @@ const PortfolioItem = ({
           <div className={styles.info}>
             <div className={styles.titleContainer}>
               <h2 className={styles.title}>
-                <img src={logoUrl[1]} width={46} height={46} alt="" />
-                {title[lang]}
+                <img src={logoUrl[1]} alt="" />
+                {/* {title[lang]} */}
               </h2>
               <div>
                 {convertedTags.map((tag, index) => (
