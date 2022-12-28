@@ -11,6 +11,7 @@ import styles from "./index.module.scss";
 
 const PortfolioGallery = ({ active, content, lang }) => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [prevSlide, setPrevSlide] = useState(0);
   const [animateIn, setAnimateIn] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
   const [moveDirection, setMoveDirection] = useState("");
@@ -21,6 +22,7 @@ const PortfolioGallery = ({ active, content, lang }) => {
   const handleStartTransition = (swiper) => {
     setAnimateIn(false);
     setAnimateOut(true);
+    setPrevSlide(swiper.realIndex);
 
     setTimeout(() => {
       setAnimateOut(false);
@@ -75,16 +77,23 @@ const PortfolioGallery = ({ active, content, lang }) => {
         ))}
       </Swiper>
       {active && (
-        <div
-          className={classNames(styles.portfolioBottomBg, {
-            [styles.animateIn]: animateIn,
-            [styles.animateOut]: animateOut,
-          })}
-          style={{
-            backgroundImage:
-              portfolioItems[activeSlide][1].backgroundGradient[1],
-          }}
-        ></div>
+        <>
+          <div
+            className={classNames(styles.portfolioBottomNextBg)}
+            style={{
+              background: portfolioItems[prevSlide][1].backgroundGradient[1],
+            }}
+          ></div>
+          <div
+            className={classNames(styles.portfolioBottomBg, {
+              [styles.animateIn]: animateIn,
+              [styles.animateOut]: animateOut,
+            })}
+            style={{
+              background: portfolioItems[activeSlide][1].backgroundGradient[1],
+            }}
+          ></div>
+        </>
       )}
     </div>
   );

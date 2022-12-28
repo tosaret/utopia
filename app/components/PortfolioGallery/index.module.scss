@@ -61,12 +61,21 @@
   overflow: hidden;
 }
 
-.upperBackground.animateIn,
-.portfolioBottomBg.animateIn {
+.portfolioBottomNextBg {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.portfolioBottomBg.animateIn,
+.upperBackground.animateIn {
   animation: fadeIn 500ms forwards;
 }
-.upperBackground.animateOut,
-.portfolioBottomBg.animateOut {
+.portfolioBottomBg.animateOut,
+.upperBackground.animateOut {
   animation: fadeOut 700ms forwards;
 }
 

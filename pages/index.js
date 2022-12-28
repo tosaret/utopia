@@ -67,7 +67,8 @@ export default function Home({ data }) {
         ref={fullPageRef}
         afterChange={afterChange}
         beforeChange={({ to }) => setNextPage(to)}
-        initialSlide={getPathIndex(router.asPath.split("#")[1]) || 0}
+        //initialSlide={getPathIndex(router.asPath.split("#")[1]) || 0}
+        initialSlide={3}
       >
         <Slide
           className={classNames("slide", {
