@@ -32,9 +32,18 @@
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 
-    strong {
-      position: relative;
-      top: -25px;
+    .item {
+      img {
+        max-width: 218px;
+        max-height: 218px;
+        width: auto;
+        height: auto;
+      }
+
+      strong {
+        display: block;
+        padding: 15px 0 0;
+      }
     }
   }
 }
