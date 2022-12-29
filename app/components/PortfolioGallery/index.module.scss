@@ -39,8 +39,9 @@
   }
 }
 
-.upperBackground {
-  transition: all 200ms ease-in-out;
+.upperBackground,
+.upperBackgroundNext {
+  background-color: #fff;
   background-size: cover;
   background-position: center;
   background-repeat: repeat;

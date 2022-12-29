@@ -28,8 +28,12 @@ const PortfolioGallery = ({ active, content, lang }) => {
     setTimeout(() => {
       setAnimateOut(false);
       setAnimateIn(true);
-      setBgOpacity(1);
     }, 500);
+  };
+
+  const handleEndTransition = (swiper) => {
+    setActiveSlide(swiper.realIndex);
+    setBgOpacity(1);
   };
 
   const handleDrag = (swiper) => {
@@ -41,10 +45,7 @@ const PortfolioGallery = ({ active, content, lang }) => {
   const countBgOpacity = (diff) => {
     const absDiff = Math.abs(diff);
     const vw = window.innerWidth;
-
     setBgOpacity(1 - absDiff / vw);
-
-    console.log(1 - absDiff / vw);
   };
 
   const nextSlideIndex = (index) => {
@@ -67,26 +68,35 @@ const PortfolioGallery = ({ active, content, lang }) => {
   return (
     <div className={styles.portfolio}>
       {active && (
-        <div
-          className={classNames(styles.upperBackground, {
-            [styles.animateIn]: animateIn,
-            [styles.animateOut]: animateOut,
-          })}
-          style={{
-            backgroundImage: `url(${portfolioItems[activeSlide][1].backgroundImage[1]})`,
-          }}
-        />
+        <>
+          <div
+            className={classNames(styles.upperBackgroundNext)}
+            style={{
+              backgroundImage: `url(${portfolioItems[prevSlide][1].backgroundImage[1]})`,
+            }}
+          ></div>
+          <div
+            className={classNames(styles.upperBackground, {
+              [styles.animateIn]: animateIn && moveDirection === "",
+              [styles.animateOut]: animateOut,
+            })}
+            style={{
+              opacity: bgOpacity,
+              backgroundImage: `url(${portfolioItems[activeSlide][1].backgroundImage[1]})`,
+            }}
+          />
+        </>
       )}
       <Swiper
         modules={[Pagination]}
-        pagination={{ clickable: false }}
+        pagination={{ clickable: true }}
         preventInteractionOnTransition={true}
         loop={true}
         speed={500}
         longSwipesMs={30000}
         longSwipesRatio={0.1}
         onTransitionStart={(swiper) => handleStartTransition(swiper)}
-        onTransitionEnd={(swiper) => setActiveSlide(swiper.realIndex)}
+        onTransitionEnd={(swiper) => handleEndTransition(swiper)}
         onSetTranslate={(swiper) => handleDrag(swiper)}
       >
         {portfolioItems.map((item, index) => (

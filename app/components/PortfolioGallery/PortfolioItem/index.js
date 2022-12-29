@@ -9,8 +9,6 @@ const PortfolioItem = ({
   isActive,
   isPrev,
   isNext,
-  moveDirection,
-  isVisible,
 }) => {
   const {
     title,
@@ -21,8 +19,6 @@ const PortfolioItem = ({
     backgroundGradient,
     logoUrl,
     imageUrl,
-    prevBgColor,
-    nextBgColor,
   } = item[1];
 
   let itemTags = [];
@@ -33,8 +29,6 @@ const PortfolioItem = ({
     <>
       <div
         className={classNames(styles.portfolioGallery, {
-          [styles.moveNext]: moveDirection === "next",
-          [styles.movePrev]: moveDirection === "prev",
           [styles.animateOut]: animateOut && (isPrev || isNext),
           [styles.animateIn]: animateIn && isActive,
         })}
@@ -44,7 +38,6 @@ const PortfolioItem = ({
             <div className={styles.titleContainer}>
               <h2 className={styles.title}>
                 <img src={logoUrl[1]} alt="" />
-                {/* {title[lang]} */}
               </h2>
               <div>
                 {convertedTags.map((tag, index) => (
