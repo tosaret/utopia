@@ -12,6 +12,7 @@ import styles from "./index.module.scss";
 const PortfolioGallery = ({ active, content, lang }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [prevSlide, setPrevSlide] = useState(0);
+  const [bgOpacity, setBgOpacity] = useState(1);
   const [animateIn, setAnimateIn] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
   const [moveDirection, setMoveDirection] = useState("");
@@ -22,16 +23,45 @@ const PortfolioGallery = ({ active, content, lang }) => {
   const handleStartTransition = (swiper) => {
     setAnimateIn(false);
     setAnimateOut(true);
-    setPrevSlide(swiper.realIndex);
+    setMoveDirection("");
 
     setTimeout(() => {
       setAnimateOut(false);
       setAnimateIn(true);
+      setBgOpacity(1);
     }, 500);
   };
 
   const handleDrag = (swiper) => {
     setMoveDirection(swiper.swipeDirection);
+    nextSlideIndex(swiper.realIndex);
+    countBgOpacity(swiper.touches.diff);
+  };
+
+  const countBgOpacity = (diff) => {
+    const absDiff = Math.abs(diff);
+    const vw = window.innerWidth;
+
+    setBgOpacity(1 - absDiff / vw);
+
+    console.log(1 - absDiff / vw);
+  };
+
+  const nextSlideIndex = (index) => {
+    if (moveDirection === "next") {
+      if (portfolioItems.length - 1 === activeSlide) {
+        setPrevSlide(0);
+      } else {
+        setPrevSlide(index + 1);
+      }
+    }
+    if (moveDirection === "prev") {
+      if (activeSlide === 0) {
+        setPrevSlide(portfolioItems.length - 1);
+      } else {
+        setPrevSlide(index - 1);
+      }
+    }
   };
 
   return (
@@ -86,10 +116,11 @@ const PortfolioGallery = ({ active, content, lang }) => {
           ></div>
           <div
             className={classNames(styles.portfolioBottomBg, {
-              [styles.animateIn]: animateIn,
+              [styles.animateIn]: animateIn && moveDirection === "",
               [styles.animateOut]: animateOut,
             })}
             style={{
+              opacity: bgOpacity,
               background: portfolioItems[activeSlide][1].backgroundGradient[1],
             }}
           ></div>

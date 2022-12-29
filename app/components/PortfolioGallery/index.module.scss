@@ -72,11 +72,11 @@
 
 .portfolioBottomBg.animateIn,
 .upperBackground.animateIn {
-  animation: fadeIn 500ms forwards;
+  animation: fadeIn 300ms forwards;
 }
 .portfolioBottomBg.animateOut,
 .upperBackground.animateOut {
-  animation: fadeOut 700ms forwards;
+  animation: fadeOut 500ms forwards;
 }
 
 @keyframes fadeIn {
@@ -90,7 +90,7 @@
 
 @keyframes fadeOut {
   0% {
-    opacity: 1;
+    opacity: auto;
   }
   100% {
     opacity: 0;
