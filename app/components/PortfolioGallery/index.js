@@ -20,20 +20,17 @@ const PortfolioGallery = ({ active, content, lang }) => {
   let portfolioItems = [];
   for (let i in content) portfolioItems.push([i, content[i]]);
 
-  const handleStartTransition = (swiper) => {
+  const handleStartTransition = () => {
     setAnimateIn(false);
     setAnimateOut(true);
-    setMoveDirection("");
-
-    setTimeout(() => {
-      setAnimateOut(false);
-      setAnimateIn(true);
-    }, 500);
   };
 
   const handleEndTransition = (swiper) => {
     setActiveSlide(swiper.realIndex);
     setBgOpacity(1);
+    setMoveDirection("");
+    setAnimateOut(false);
+    setAnimateIn(true);
   };
 
   const handleDrag = (swiper) => {
@@ -95,7 +92,7 @@ const PortfolioGallery = ({ active, content, lang }) => {
         speed={500}
         longSwipesMs={30000}
         longSwipesRatio={0.1}
-        onTransitionStart={(swiper) => handleStartTransition(swiper)}
+        onTransitionStart={() => handleStartTransition()}
         onTransitionEnd={(swiper) => handleEndTransition(swiper)}
         onSetTranslate={(swiper) => handleDrag(swiper)}
       >
