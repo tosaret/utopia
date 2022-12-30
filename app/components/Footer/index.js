@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./index.module.scss";
 
 import thomasPhoto from "../../../public/thomas.png";
-import footerLogo from "../../../public/footer-logo.png";
+import footerLogo from "../../../public/footer-logo.svg";
 import ContactForm from "./ContactForm";
 import classNames from "classnames";
 
